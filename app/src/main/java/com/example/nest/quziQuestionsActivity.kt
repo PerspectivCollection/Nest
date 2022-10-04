@@ -14,9 +14,9 @@ class quziQuestionsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_quzi_questions)
 
 
-        mqustionList = Constanst.getQuestion()
-        setQuestion()
-
-        duck_option_one.setOnClickListener(this)
+//        mqustionList = Constanst.getQuestion()
+//        setQuestion()
+//
+//        duck_option_one.setOnClickListener(this)
     }
 }
