@@ -1,29 +1,42 @@
 <resources>
+    //app
     <string name="app_name">Nest</string>
     <string name="title_activity_navigation_drawer">NavigationDrawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-
     //menu
-    <string name="guess_who">Guess Who</string>
+    <string name="name_of_app">Nest</string>
+
+    <string name="guess_who_ui">Guess Who</string>
+    <string name="menu_name_quiz">Name Quiz</string>
+    <string name="menu_audio_quiz">Audio Quiz</string>
+    <string name="menu_gallery_ui">Gallery</string>
+
+    //nav-fragment-guessWho
+    <string name="guess_who_str">Guess Who</string>
     <string name="name_quizz">Name Quizz</string>
     <string name="gallery">Gallery</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="collection">collection</string>
-    <string name="Blank">Blank</string>
-    <string name="title_activity_main2">MainActivity2</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="title_activity_home_main_navigation">Home_Main_Navigation</string>
-    <string name="home">Home</string>
-    <string name="slider">Slider</string>
+    //nav-fragment-nameQuiz
+
+    //nav-fragment-audioQuiz
+
+    //nav-fragment-gallery
+
+<!--    -->
+<!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
+<!--    <string name="collection">collection</string>-->
+<!--    <string name="Blank">Blank</string>-->
+<!--    <string name="title_activity_main2">MainActivity2</string>-->
+
+
+<!--    <string name="title_activity_home_main_navigation">Home_Main_Navigation</string>-->
+<!--    <string name="home">Home</string>-->
+<!--    <string name="slider">Slider</string>-->
 
     //
 </resources>
