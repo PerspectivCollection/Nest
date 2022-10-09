@@ -1,13 +1,15 @@
-package com.example.nest
+package com.example.nest.navigationNotNow
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.example.nest.Question
+import com.example.nest.R
 
 class quziQuestionsActivity : AppCompatActivity() {
 
-    private var mCurrentPosition: Int =1
+    private var mCurrentPosition: Int = 1
     private var mqustionList: ArrayList<Question>? = null
-    private var mseletionOptionPosition: Int  = 0
+    private var mseletionOptionPosition: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
