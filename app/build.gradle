@@ -4,11 +4,10 @@ plugins {
 }
 
 android {
-    namespace 'com.example.nest.ui.gallery'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.nest.ui.gallery"
+        applicationId "com.example.nest"
         minSdk 21
         targetSdk 32
         versionCode 1

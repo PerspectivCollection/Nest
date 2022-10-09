@@ -6,7 +6,8 @@
     android:id="@+id/constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".navigationNotNow.BlankFragment">
+    tools:context=".navigationdraw.GalleryFragment">
+<!--    tools:context="">-->
 
     <TextView
         android:id="@+id/textView"

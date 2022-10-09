@@ -1,4 +1,4 @@
-package com.example.nest.ui.gallery
+package com.example.nest.navigationdraw
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,20 +9,20 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.nest.R
+import com.example.nest.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
-import
 
 
-
-class NavigationMainHomeActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityHomeMainNavigationBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityHomeMainNavigationBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
