@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Nest</string>
+    <string name="first_App">Guess who?</string>
+    <string name="second_App">NameQuiz</string>
+    <string name="third_App">Audio clip quiz</string>
+
 </resources>
