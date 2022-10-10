@@ -11,15 +11,17 @@
         android:label="@string/guess_who_ui"
         tools:layout="@layout/fragment_home" />
 
+
+    <fragment
+        android:id="@+id/nav_guesswho"
+        android:name="com.example.nest.navigationdraw.GuesswhoFragment"
+        android:label="@string/menu_audio_quiz" />
+
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.nest.navigationdraw.GalleryFragment"
         android:label="@string/menu_gallery_ui"
-        />
+        tools:layout="@layout/fragment_gallery" />
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.nest.navigationdraw.GuessWho"
-        android:label="@string/menu_name_quiz"
-        tools:layout="@layout/fragment_slideshow" />
+
 </navigation>
