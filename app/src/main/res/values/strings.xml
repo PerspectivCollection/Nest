@@ -11,15 +11,25 @@
     //menu
     <string name="name_of_app">Nest</string>
 
-    <string name="guess_who_ui">Guess Who</string>
+    <string name="menu_guess_who">Guess Who</string>
     <string name="menu_name_quiz">Name Quiz</string>
     <string name="menu_audio_quiz">Audio Quiz</string>
     <string name="menu_gallery_ui">Gallery</string>
 
-    //nav-fragment-guessWho
-    <string name="guess_who_str">Guess Who</string>
-    <string name="name_quizz">Name Quizz</string>
-    <string name="gallery">Gallery</string>
+    //nav/fragment-guessWho
+    <string name="fragment_guesswho">Guess Who</string>
+
+
+    //nav/fragment-namequizz
+    <string name="fragment_name_quizz">Name Quizz</string>
+
+    //nav/fragment-audioquizz
+    <string name="fragment_audio_quizz">Audio Quizz</string>
+
+
+    //nav/fragment-gallery
+    <string name="fragment_gallery">Gallery</string>
+
 
     //nav-fragment-nameQuiz
 
@@ -27,16 +37,4 @@
 
     //nav-fragment-gallery
 
-<!--    -->
-<!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
-<!--    <string name="collection">collection</string>-->
-<!--    <string name="Blank">Blank</string>-->
-<!--    <string name="title_activity_main2">MainActivity2</string>-->
-
-
-<!--    <string name="title_activity_home_main_navigation">Home_Main_Navigation</string>-->
-<!--    <string name="home">Home</string>-->
-<!--    <string name="slider">Slider</string>-->
-
-    //
 </resources>
