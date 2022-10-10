@@ -1,4 +1,4 @@
-package com.example.nest.screensQuiz.guesswho
+package com.example.nest.screensQuiz.guessFolder
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

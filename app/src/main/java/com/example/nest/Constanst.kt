@@ -4,7 +4,6 @@ object Constanst {
   fun getQuestion(): ArrayList<Question> {
       val questionList = ArrayList<Question>()
 
-
       val question1 = Question(
           1,
           "Guess Who?",

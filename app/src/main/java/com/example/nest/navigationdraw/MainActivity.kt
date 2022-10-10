@@ -1,4 +1,4 @@
-package com.example.nest
+package com.example.nest.navigationdraw
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.nest.R
 import com.example.nest.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_guesswho
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
