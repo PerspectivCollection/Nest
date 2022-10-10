@@ -5,17 +5,19 @@
     android:id="@+id/nav_navigation"
     app:startDestination="@id/nav_home">
 
+<!--    todo: debug start changing string, then change packag eks Fragmant  -->
+
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.nest.navigationdraw.HomeFragment"
-        android:label="@string/guess_who_ui"
+        android:name="com.example.nest.navigationdraw.GuesswhoFragment"
+        android:label="@string/fragment_guesswho"
         tools:layout="@layout/fragment_home" />
 
-
+<!--name quiz    -->
     <fragment
         android:id="@+id/nav_guesswho"
-        android:name="com.example.nest.navigationdraw.GuesswhoFragment"
-        android:label="@string/menu_audio_quiz" />
+        android:name="com.example.nest.navigationdraw.HomeFragment"
+        android:label="@string/fragment_name_quizz" />
 
     <fragment
         android:id="@+id/nav_gallery"
