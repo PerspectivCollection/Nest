@@ -1,7 +1,6 @@
 package com.example.nest
 
 data class Question(
-
     val id: Int,
     val question: String,
     val optionOne: String,
