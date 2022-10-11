@@ -3,7 +3,7 @@ package com.example.nest.model
 //import com.example.nest.R
 
 
-data class Bird(val id: Int, val name: String, val name_latin: String, val image: Int) {
+data class Bird(val id: Int, val typeBird: String,  val name: String, val name_latin: String, val image: Int) {
 
     companion object {
         fun getBird(): List<Bird> {
