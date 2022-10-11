@@ -6,13 +6,13 @@
     <group android:checkableBehavior="single">
 <!--        guess who-->
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_guesswho"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_guess_who" />
 
 <!--        todo: change to namequiz  refactor-->
         <item
-            android:id="@+id/nav_guesswho"
+            android:id="@+id/nav_namequiz"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_name_quiz" />
         <item
