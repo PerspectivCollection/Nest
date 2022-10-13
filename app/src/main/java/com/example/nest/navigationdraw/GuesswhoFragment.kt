@@ -68,8 +68,8 @@ class GuesswhoFragment : Fragment() {
 
         var process = View.findViewById<ProgressBar>(R.id.progressBar2)
 
-
-        var TextNamBird = View.findViewById<TextView>(R.id.GetNamBirdId)
+//todo leg til i fact fragment
+//        var TextNamBird = View.findViewById<TextView>(R.id.GetNamBirdId)
 
 
         Button1.text = "${Bird.getBird().get(atNumberIndex).typeBird}"
@@ -84,7 +84,7 @@ class GuesswhoFragment : Fragment() {
 
 
             //Todo: put this string in to the next fragment and reapit the prosses
-            TextNamBird.text = Bird.getBird().get(atNumberIndex).name.toString()
+//            TextNamBird.text = Bird.getBird().get(atNumberIndex).name.toString()
 
 
                 Toast.makeText(context, "${atNumberIndex}", Toast.LENGTH_SHORT).show()
@@ -100,7 +100,7 @@ class GuesswhoFragment : Fragment() {
             Bird.getBird().get(atNumberIndex).image?.let { Image.setImageResource(it) }
 
 
-            findNavController().navigate(R.id.action_)
+//            findNavController().navigate(R.id.action_)
 
 //            findNavController().navigate(R.id.fragment_fact)
 
