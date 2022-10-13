@@ -3,5 +3,5 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_namequizz">
 
-    <include app:graph="@navigation/nav_navigation" />
+<!--    <include app:graph="@navigation/nav_navigation" />-->
 </navigation>

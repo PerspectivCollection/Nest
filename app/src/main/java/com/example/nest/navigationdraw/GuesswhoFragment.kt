@@ -66,7 +66,7 @@ class GuesswhoFragment : Fragment() {
 
         val Button2 = View.findViewById<Button>(R.id.btnOption2id)
 
-        var process = View.findViewById<ProgressBar>(R.id.progressBar2)
+        var process = View.findViewById<ProgressBar>(R.id.progressBar)
 
 //todo leg til i fact fragment
 //        var TextNamBird = View.findViewById<TextView>(R.id.GetNamBirdId)
