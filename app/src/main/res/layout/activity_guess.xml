@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:background="@drawable/forside"
-    tools:context=".GuessWhoApp">
+    tools:context=".NameQuiz">
 
 
     <TextView
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:text="@string/nest"
+        android:text="@string/first_App"
         android:textColor="#5C6BC0"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -90,3 +90,4 @@
 
 
 </LinearLayout>
+

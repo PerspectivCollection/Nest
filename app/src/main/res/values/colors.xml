@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="card_hit_color">#7A8089</color>
+    <color name="red">#CA0D0D</color>
 </resources>

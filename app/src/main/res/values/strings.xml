@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">Nest</string>
-    <string name="first_App" translatable="false">Guess who?</string>
-    <string name="second_App" translatable="false">NameQuiz</string>
-    <string name="third_App" translatable="false">Audio clip quiz</string>
+    <string name="first_App" translatable="false">Name Quiz</string>
     <string name="please_enter_your_name" translatable="false">Please enter your name</string>
     <string name="welcome">Welcome</string>
     <string name="start">Start</string>

@@ -8,102 +8,102 @@ object Constants {
         val qui1 = Question(
             1,
             "What is the name of the Goose?",
-            R.drawable.cutegoose,
-            "mandarin",
-            "B",
-            "C",
-            "D",
+            R.drawable.barheaded,
+            "Barheaded",
+            "Cackling",
+            "Cereopsis",
+            "Coscoroba Prinknash",
             1)
         qustionList.add(qui1)
 
         val qui2 = Question(
             2,
             "What is the name of the Goose?",
-            R.drawable.cutegoose,
-            "mandarin",
-            "B",
-            "C",
-            "D",
+            R.drawable.cackling,
+            "Barheaded",
+            "Cackling",
+            "Cereopsis",
+            "Coscoroba Prinknash",
             1)
         qustionList.add(qui2)
         val qui3 = Question(
             3,
             "What is the name of the Goose?",
-            R.drawable.cutegoose,
-            "mandarin",
-            "B",
-            "C",
-            "D",
+            R.drawable.cereopsis,
+            "coscorobaprinknash",
+            "cereopsis",
+            "emperor",
+            "Cereopsis",
             1)
         qustionList.add(qui3)
         val qui4 = Question(
             4,
             "What is the name of the Goose?",
-            R.drawable.cutegoose,
+            R.drawable.coscorobaprinknash,
             "mandarin",
-            "B",
-            "C",
-            "D",
+            "cereopsis",
+            "coscorobaprinknash",
+            "emperor",
             1)
         qustionList.add(qui4)
         val qui5 = Question(
             5,
             "What is the name of the Goose?",
-            R.drawable.cutegoose,
+            R.drawable.domesticgoose,
             "mandarin",
-            "B",
-            "C",
-            "D",
+            "domesticgoose",
+            "emperor",
+            "coscorobaprinknash",
             1)
         qustionList.add(qui5)
         val qui6 = Question(
             6,
             "What is the name of the Goose?",
-            R.drawable.cutegoose,
-            "mandarin",
-            "B",
-            "C",
-            "D",
+            R.drawable.emperor,
+            "emperor",
+            "ruddyheaded",
+            "domesticgoose",
+            "coscorobaprinknash",
             1)
         qustionList.add(qui6)
         val qui7 = Question(
             7,
             "What is the name of the Goose?",
-            R.drawable.cutegoose,
-            "mandarin",
-            "B",
-            "C",
-            "D",
+            R.drawable.magpie_goose,
+            "magpie_goose",
+            "egyption",
+            "ruddyheaded",
+            "domesticgoose",
             1)
         qustionList.add(qui7)
         val qui8 = Question(
             8,
             "What is the name of the Goose?",
-            R.drawable.cutegoose,
-            "mandarin",
-            "B",
-            "C",
-            "D",
+            R.drawable.ruddyheaded,
+            "magpie_goose",
+            "ruddyheaded",
+            "egyption",
+            "domesticgoose",
             1)
         qustionList.add(qui8)
         val qui9 = Question(
             9,
             "What is the name of the Goose?",
-            R.drawable.cutegoose,
-            "mandarin",
-            "B",
-            "C",
-            "D",
+            R.drawable.egyption,
+            "magpie_goose",
+            "egyption",
+            "ruddyheaded",
+            "domesticgoose",
             1)
         qustionList.add(qui9)
         val qui10 = Question(
             10,
             "What is the name of the Goose?",
-            R.drawable.cutegoose,
+            R.drawable.domesticgoose,
             "mandarin",
-            "B",
-            "C",
-            "D",
+            "magpie_goose",
+            "egyption",
+            "domesticgoose",
             1)
         qustionList.add(qui10)
 
