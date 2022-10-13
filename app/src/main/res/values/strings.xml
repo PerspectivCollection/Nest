@@ -1,3 +1,41 @@
 <resources>
+    //app
     <string name="app_name">Nest</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    //menu
+    <string name="name_of_app">Nest</string>
+
+    <string name="menu_guess_who">Guess Who</string>
+    <string name="menu_name_quiz">Name Quiz</string>
+    <string name="menu_audio_quiz">Audio Quiz</string>
+    <string name="menu_gallery_ui">Gallery</string>
+
+    //nav/fragment-guessWho
+    <string name="fragment_guesswho">Guess Who</string>
+
+
+    //nav/fragment-namequizz
+    <string name="fragment_name_quizz">Name Quizz</string>
+
+    //nav/fragment-audioquizz
+    <string name="fragment_audio_quizz">Audio Quizz</string>
+
+
+    //nav/fragment-gallery
+    <string name="fragment_gallery">Gallery</string>
+    <string name="hello_blank_fragment">some fact</string>
+
+
+    //nav-fragment-nameQuiz
+
+    //nav-fragment-audioQuiz
+
+    //nav-fragment-gallery
+
 </resources>
