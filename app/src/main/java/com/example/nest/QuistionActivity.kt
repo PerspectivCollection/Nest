@@ -1,18 +1,18 @@
-package com.example.nest
 import android.graphics.Color
 import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.example.nest.Constants
+import com.example.nest.Question
+import com.example.nest.R
 import kotlinx.android.synthetic.main.activity_guess.*
 import kotlinx.android.synthetic.main.questionactivity.*
 
-
-
-class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
+class QuistionActivity : AppCompatActivity(), View.OnClickListener {
 
 
     private var mCurrentPosition:Int = 1
@@ -33,7 +33,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
-         }
+    }
     private fun setQuestion(){
 
         mCurrentPosition = 1
@@ -72,7 +72,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
             options.setTextColor(Color.parseColor("#7A8089"))
             options.typeface = Typeface.DEFAULT
             options.background = ContextCompat.getDrawable(this,
-            R.drawable.quiz_bakground)
+                R.drawable.quiz_bakground)
         }
     }
 
@@ -101,7 +101,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         }
                         else ->{
                             Toast.makeText(this,"You have successfully completed the Quiz",
-                            Toast.LENGTH_SHORT).show()
+                                Toast.LENGTH_SHORT).show()
                         }
                     }
 
@@ -116,7 +116,7 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                     if(mCurrentPosition == mQuestionList!!.size){
                         start_btn.text="Finish"
                     }
-                        start_btn.text="NEXT QUISTION"
+                    start_btn.text="NEXT QUISTION"
                 }
                 mSeleOptionPos = 0
 
@@ -125,45 +125,45 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         }
 
     }
-        private fun answarView(ans: Int, drawView: Int){
-            when(ans){
-                1 ->{
-                    first_qustion.background = ContextCompat.getDrawable(
-                        this@QuestionsActivity,drawView
-                    )                }
+    private fun answarView(ans: Int, drawView: Int){
+        when(ans){
+            1 ->{
+                first_qustion.background = ContextCompat.getDrawable(
+                    this@QuistionActivity,drawView
+                )                }
 
-                2 ->{
-                    secend_qustion.background = ContextCompat.getDrawable(
-                        this@QuestionsActivity, drawView
-                    )
-                }
-
-                3->{
-                    third_qustion.background = ContextCompat.getDrawable(
-                        this@QuestionsActivity, drawView
-                    )
-
-                }
-
-                4 ->{
-                   four_qustion .background = ContextCompat.getDrawable(
-                        this@QuestionsActivity, drawView
-                    )
-
-                }
+            2 ->{
+                secend_qustion.background = ContextCompat.getDrawable(
+                    this@QuistionActivity, drawView
+                )
             }
 
-        }
-        private fun selectedOptionView(op: TextView, selectedOptionNum: Int){
-            defaultOptionView()
-            mSeleOptionPos = selectedOptionNum
+            3->{
+                third_qustion.background = ContextCompat.getDrawable(
+                    this@QuistionActivity, drawView
+                )
 
-            op.setTextColor(Color.parseColor("#363A43"))
-            op.setTypeface(op.typeface, Typeface.BOLD)
-            op.background = ContextCompat.getDrawable(
-                this,
-                R.drawable.redc)
+            }
 
+            4 ->{
+                four_qustion .background = ContextCompat.getDrawable(
+                    this@QuistionActivity, drawView
+                )
+
+            }
         }
+
+    }
+    private fun selectedOptionView(op: TextView, selectedOptionNum: Int){
+        defaultOptionView()
+        mSeleOptionPos = selectedOptionNum
+
+        op.setTextColor(Color.parseColor("#363A43"))
+        op.setTypeface(op.typeface, Typeface.BOLD)
+        op.background = ContextCompat.getDrawable(
+            this,
+            R.drawable.redc)
+
+    }
 
 }
