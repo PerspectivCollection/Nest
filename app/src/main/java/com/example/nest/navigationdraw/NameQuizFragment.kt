@@ -13,7 +13,6 @@ import com.example.nest.R
 
 
 //model
-import com.example.nest.Constanst
 import com.example.nest.databinding.FragmentGuesswhoBinding
 
 class NameQuizFragment : Fragment() {
