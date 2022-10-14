@@ -1,6 +1,7 @@
 <resources>
-    //app
     <string name="app_name">Nest</string>
+
+=======
     <string name="title_activity_navigation_drawer">NavigationDrawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -18,7 +19,6 @@
 
     //nav/fragment-guessWho
     <string name="fragment_guesswho">Guess Who</string>
-    <string name="birdShowStr">some argument</string>
 
 
     //nav/fragment-namequizz
@@ -33,14 +33,11 @@
     <string name="hello_blank_fragment">some fact</string>
 
 
-
     //nav-fragment-nameQuiz
 
     //nav-fragment-audioQuiz
 
     //nav-fragment-gallery
 
-    //nav-fragment-fact
-    <string name="show_bird">show bird</string>
-
+>>>>>>> 37dfb1f (fix: guess who progresbar)
 </resources>
