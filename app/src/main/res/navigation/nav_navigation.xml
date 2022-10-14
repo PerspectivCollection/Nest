@@ -5,15 +5,18 @@
     android:id="@+id/nav_navigation"
     app:startDestination="@id/nav_guesswho">
 
-<!--    todo: debug start changing string, then change packag eks Fragmant  -->
+    <!--    todo: debug start changing string, then change packag eks Fragmant  -->
 
     <fragment
         android:id="@+id/nav_guesswho"
         android:name="com.example.nest.navigationdraw.GuesswhoFragment"
         android:label="@string/fragment_guesswho"
-        tools:layout="@layout/fragment_namequiz" />
+        tools:layout="@layout/fragment_namequiz">
+        <action
+            android:id="@+id/action_nav_guesswho_to_factFragment2"
+            app:destination="@id/factFragment2" />
+    </fragment>
 
-<!--name quiz    -->
     <fragment
         android:id="@+id/nav_namequiz"
         android:name="com.example.nest.navigationdraw.NameQuizFragment"
@@ -24,6 +27,12 @@
         android:name="com.example.nest.navigationdraw.GalleryFragment"
         android:label="@string/menu_gallery_ui"
         tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/factFragment2"
+        android:name="com.example.nest.screensAll.FactFragment"
+        android:label="fragment_fact"
+        tools:layout="@layout/fragment_fact"/>
 
 
 </navigation>

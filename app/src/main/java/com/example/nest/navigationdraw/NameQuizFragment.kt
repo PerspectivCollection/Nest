@@ -14,14 +14,13 @@ import com.example.nest.R
 
 //model
 import com.example.nest.Constanst
+import com.example.nest.databinding.FragmentGuesswhoBinding
 
 class NameQuizFragment : Fragment() {
 
-//    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentGuesswhoBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-//    private val binding get() = _binding!!
+    private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,25 +30,7 @@ class NameQuizFragment : Fragment() {
 
         val View = inflater.inflate(R.layout.fragment_namequiz, container, false)
 
-        /*
-//        val homeViewModel =
-//            ViewModelProvider(this).get(HomeViewModel::class.java)
-//
-//        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-//        val root: View = binding.root
-//
-//        val textView: TextView = binding.textHome
-//        homeViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        } */
-
-//        View.findViewById<Button>(R.id.btnOption1id).setOnClickListener() {
-//
-//            Toast.makeText(context, "f ${(Constanst.getQuestion().get(0))}} ", Toast.LENGTH_LONG).show()
-//
-//            Toast.makeText(context, "f ${Constanst.getQuestion().get(1)} ", Toast.LENGTH_LONG).show()
-//
-//        }
+//        binding.  binding.textView2.text
 
 
         return View

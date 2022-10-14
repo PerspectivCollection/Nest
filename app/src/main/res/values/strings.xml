@@ -18,6 +18,7 @@
 
     //nav/fragment-guessWho
     <string name="fragment_guesswho">Guess Who</string>
+    <string name="birdShowStr">some argument</string>
 
 
     //nav/fragment-namequizz
@@ -32,10 +33,14 @@
     <string name="hello_blank_fragment">some fact</string>
 
 
+
     //nav-fragment-nameQuiz
 
     //nav-fragment-audioQuiz
 
     //nav-fragment-gallery
+
+    //nav-fragment-fact
+    <string name="show_bird">show bird</string>
 
 </resources>

@@ -1,0 +1,94 @@
+
+//        val ObsTest = Observer<String> { newName ->
+//            Toast.makeText(context, "${newName}", Toast.LENGTH_LONG).show()
+////            viewModel.textNameBird.observe(this, ObsTest)
+//        }
+        /*
+        // Use the Kotlin extension in the fragment-ktx artifact
+        setFragmentResultListener("requestKey") { requestKey, bundle ->
+            // We use a String here, but any type that can be put in a Bundle is supported
+            val result = bundle.getString("bundleKey")
+            // Do something with the result
+
+        }
+
+         */
+
+//        val slideshowViewModel =
+//            ViewModelProvider(this).get(SlideshowViewModel::class.java)
+//
+
+//        binding.sendBird = viewModel
+//        binding.lifecycleOwner = this
+
+
+        /*
+//        val homeViewModel =
+//            ViewModelProvider(this).get(HomeViewModel::class.java)
+//
+//        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+//        val root: View = binding.root
+//
+//        val textView: TextView = binding.textHome
+//        homeViewModel.text.observe(viewLifecycleOwner) {
+//            textView.text = it
+//        } */
+
+//        View.findViewById<Button>(R.id.btnOption1id).setOnClickListener() {
+//
+//            Toast.makeText(context, "f ${(Constanst.getQuestion().get(0))}} ", Toast.LENGTH_LONG).show()
+//
+//            Toast.makeText(context, "f ${Constanst.getQuestion().get(1)} ", Toast.LENGTH_LONG).show()
+//
+//        }
+
+
+_____________guess VM
+
+//    var filters : LiveData<List<Bird>>
+
+/*
+    private var atNumberIndex = 0
+    val filters : MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+*/
+
+
+//    val birdShow: LiveData<String> get() = _filters
+//
+//    fun birdShow(bird: Bird) {
+//        _filters.value!! = Bird().name
+//    }
+
+//todo try observer pattern
+/*
+            val anotherName = "John Doe"
+            viewModel.filters.setValue(anotherName)
+
+
+            viewModel.textNameBird.setvalue = textNameBird
+
+*/
+//todo end observer pattern
+        //somthing here
+//        fun sendtoFact() {
+//            val action = GuesswhoFragmentDirections.actionNavGuesswhoToFactFragment2()
+////        action.textNameBird = viewModel.textNameBird.value ?: "hade"
+//
+//            NavHostFragment.findNavController(this).navigate(action)
+//            findNavController().navigate(R.id.factFragment2)
+//        }
+
+//todo add string parameters
+android:text="{@string/birdShowStr(SendBird.textNameBird)}"
+
+-------------- arguments
+//todo arguments
+
+     <argument
+            android:name="textNameBird"
+            app:argType="string"
+            android:defaultValue="BirdName" />
+
+
