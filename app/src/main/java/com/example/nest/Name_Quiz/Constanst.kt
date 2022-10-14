@@ -1,4 +1,6 @@
-package com.example.nest
+package com.example.nest.Name_Quiz
+
+import com.example.nest.Name_Quiz.Question
 
 object Constanst {
   fun getQuestion(): ArrayList<Question> {
