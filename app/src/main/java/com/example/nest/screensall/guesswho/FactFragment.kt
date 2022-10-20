@@ -31,7 +31,11 @@ class FactFragment : Fragment() {
         binding.viewModel = sharedViewModel
         binding.lifecycleOwner = this
 
-        Toast.makeText(context, "${sharedViewModel.storeList.toString()}", Toast.LENGTH_LONG).show()
+        val somInt = sharedViewModel.birdindex.value?.toInt()
+        Toast.makeText(context, "${somInt}", Toast.LENGTH_LONG).show()
+
+//        binding.birdtextId.text = "${Bird.getBird().get(sharedViewModel.birdindex.value?.toInt()).name}"
+//        binding.birdtextId.text = "${sharedViewModel.birdindex.value?.toInt()}"
 
 
         //todo corect or wrong green or red
@@ -56,8 +60,8 @@ class FactFragment : Fragment() {
         }
 //todo later display a fact card
         binding.btnShowFactId.setOnClickListener() {
-            navigateNext()
-//            showFact()
+//            navigateNext()
+            showFact()
         }
 
         return binding.root
@@ -97,6 +101,7 @@ class FactFragment : Fragment() {
 
     //todo not jet implementet
     fun showFact() {
+        binding.cardViewid.visibility = View.VISIBLE
     }
 
     override fun onDestroyView() {
