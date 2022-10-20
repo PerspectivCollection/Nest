@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
@@ -23,7 +24,18 @@ class GuesswhoFragment : Fragment() {
     private val viewModel: GuesswhoViewModel by viewModels()
 
     //start at index 0 in bird list
-    private var atNumberIndex = 0
+
+    var atNumberIndex = 0
+
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//
+//
+//
+//
+//    }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,6 +46,16 @@ class GuesswhoFragment : Fragment() {
         //data bindet , can now set variabls
         binding.sendBirdData = viewModel
         binding.lifecycleOwner = this
+
+        var args = GuesswhoFragmentArgs.fromBundle(requireArguments())
+
+        viewModel.indexBird = args.indexBird
+
+
+        Toast.makeText(context, "${viewModel.indexBird}  ferdig", Toast.LENGTH_SHORT).show()
+
+//        atNumberIndex = viewModel.indexBird
+
 
         val View = inflater.inflate(R.layout.fragment_guesswho, container, false)
         var Image = View.findViewById<ImageView>(R.id.imagegoosId)
@@ -57,14 +79,16 @@ class GuesswhoFragment : Fragment() {
 //            // a list with 5 questions
 //            binding.progressBar.progress += 20
 
-
 //            guessFinich()
 
+
             val some = GuesswhoFragmentDirections.actionNavGuesswhoToFactFragment()
-            some.textbird = "${Bird.getBird().get(atNumberIndex).name.toString()}"
+            some.textbird = "${Bird.getBird().get(viewModel.indexBird).name.toString()}"
             NavHostFragment.findNavController(this).navigate(some)
+
+
 //todo: add function update to viewModel
-            atNumberIndex++
+//            atNumberIndex++
 
 
         }

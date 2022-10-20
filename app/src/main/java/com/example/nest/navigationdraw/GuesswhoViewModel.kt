@@ -5,13 +5,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class GuesswhoViewModel : ViewModel() {
-//    private val _textbird = MutableLiveData<String>()
 
+    var indexBird : Int = 0
+
+
+//    private val _textbird = MutableLiveData<String>()
     val textbird = MutableLiveData<String>()
 //        get() = _textbird
 
+
     init {
         textbird.value = "som val start"
+
     }
 
 
