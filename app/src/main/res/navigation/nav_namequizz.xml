@@ -9,7 +9,7 @@
     <include app:graph="@navigation/nav_navigation" />
     <fragment
         android:id="@+id/factFragment"
-        android:name="com.example.nest.screensAll.FactFragment"
+        android:name="com.example.nest.screensAll.guesswho.FactFragment"
         android:label="fragment_fact"
         tools:layout="@layout/fragment_fact" />
 </navigation>

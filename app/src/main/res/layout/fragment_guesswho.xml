@@ -6,7 +6,7 @@
 
     <data>
         <variable
-            name="SendBird"
+            name="sendBirdData"
             type="com.example.nest.navigationdraw.GuesswhoViewModel" />
     </data>
 
@@ -14,7 +14,7 @@
         android:id="@+id/progressBar2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".navigationdraw.MainActivity">
+        tools:context="navigationdraw.GuesswhoFragment">
 
         <TextView
             android:id="@+id/textView"

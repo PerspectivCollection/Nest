@@ -1,19 +1,13 @@
 package com.example.nest.navigationdraw
 
+
+//model
 import android.os.Bundle
-import android.text.InputFilter.LengthFilter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-
 import com.example.nest.R
-
-
-//model
-import com.example.nest.Constanst
 import com.example.nest.databinding.FragmentGuesswhoBinding
 
 class NameQuizFragment : Fragment() {
@@ -22,7 +16,8 @@ class NameQuizFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater,
+    override fun onCreateView(
+        inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
 

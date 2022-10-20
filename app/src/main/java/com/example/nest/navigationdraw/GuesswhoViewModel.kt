@@ -1,16 +1,21 @@
 package com.example.nest.navigationdraw
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.nest.model.Bird
 
 class GuesswhoViewModel : ViewModel() {
-    private val _textNameBird = MutableLiveData<String>()
-    val textNameBird : LiveData<String>
-    get() = _textNameBird
+//    private val _textbird = MutableLiveData<String>()
+
+    val textbird = MutableLiveData<String>()
+//        get() = _textbird
 
     init {
-        _textNameBird.value = ""
+        textbird.value = "som val start"
     }
+
+
+//    fun showbird() {
+//        textbird.value = "bird.name"
+//    }
 }
