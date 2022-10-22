@@ -12,7 +12,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import com.example.nest.R
 import com.example.nest.databinding.FragmentGuesswhoBinding
 import com.example.nest.model.Bird
@@ -24,18 +23,12 @@ class GuesswhoFragment : Fragment() {
     private val viewModel: GuesswhoViewModel by viewModels()
 
     //start at index 0 in bird list
-
+//todo generer en tilfeldig liste med birds
     var atNumberIndex = 0
 
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
-//
-//
-//
-//
 //    }
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,7 +49,6 @@ class GuesswhoFragment : Fragment() {
 
 //        atNumberIndex = viewModel.indexBird
 
-
         val View = inflater.inflate(R.layout.fragment_guesswho, container, false)
         var Image = View.findViewById<ImageView>(R.id.imagegoosId)
 
@@ -66,45 +58,29 @@ class GuesswhoFragment : Fragment() {
         //at image index
 //        Bird.getBird().get(atNumberIndex).image?.let { Image.setImageResource(it) }
 
-        //button if bird type is duck
+        //button Duck
         binding.btnOption1id.setOnClickListener() {
-            //Image
-//            if ("Duck".equals(Bird.getBird().get(atNumberIndex).typeBird.toString()))
-//                Toast.makeText(
-//                    context,
-//                    "${Bird.getBird().get(atNumberIndex).name} CORECT",
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//
-//            // a list with 5 questions
 //            binding.progressBar.progress += 20
 
-//            guessFinich()
-
-
-            val some = GuesswhoFragmentDirections.actionNavGuesswhoToFactFragment()
-            some.textbird = "${Bird.getBird().get(viewModel.indexBird).name.toString()}"
-            NavHostFragment.findNavController(this).navigate(some)
-
+            val action = GuesswhoFragmentDirections.actionNavGuesswhoToFactFragment()
+            action.typeBird =
+                "Duck".equals(Bird.getBird().get(atNumberIndex).typeBird.toString()) //is statment
+            action.textbird = "${Bird.getBird().get(viewModel.indexBird).name.toString()}"
+            NavHostFragment.findNavController(this).navigate(action)
 
 //todo: add function update to viewModel
 //            atNumberIndex++
-
-
         }
 
-        //button if bird type is goose
+        //button Goose
         binding.btnOption2id.setOnClickListener() {
-//            if ("Goose".equals(Bird.getBird().get(atNumberIndex).typeBird.toString()))
-//                Toast.makeText(
-//                    context,
-//                    "${Bird.getBird().get(atNumberIndex).name} CORECT",
-//                    Toast.LENGTH_SHORT
-//                ).show()
+            //            binding.progressBar.progress += 20
+            val action = GuesswhoFragmentDirections.actionNavGuesswhoToFactFragment()
+            action.typeBird =
+                "Goose".equals(Bird.getBird().get(atNumberIndex).typeBird.toString()) //is statment
+            action.textbird = "${Bird.getBird().get(viewModel.indexBird).name.toString()}"
+            NavHostFragment.findNavController(this).navigate(action)
 //
-//            binding.progressBar.progress += 20
-
-            guessFinich()
 
         }
         updateBirdUI()
@@ -119,21 +95,13 @@ class GuesswhoFragment : Fragment() {
 ////            atNumberIndex = 0
 ////        }
 ////        atNumberIndex++
-//
-        val action = GuesswhoFragmentDirections.actionNavGuesswhoToFactFragment()
-
-//        action.arguments
-
-        NavHostFragment.findNavController(this).navigate(action)
-        findNavController().navigate(R.id.factFragment)
-
     }
 
     private fun updateBirdUI() {
         //todo: hvor vi vill sende
 //            binding.birdtextId.text = getString(R.string.show_bird, viewModel.textbird.value?:0)
 //        //todo:
-//        binding.
+
 
     }
 //

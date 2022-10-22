@@ -8,6 +8,8 @@ class GuesswhoViewModel : ViewModel() {
 
     var indexBird : Int = 0
 
+    var typeBird : Boolean = true
+
 
 //    private val _textbird = MutableLiveData<String>()
     val textbird = MutableLiveData<String>()

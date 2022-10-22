@@ -19,14 +19,18 @@
 
         <TextView
             android:id="@+id/birdtextId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="235dp"
+            android:layout_height="48dp"
+            android:background="#FF9800"
             android:text="@string/show_bird"
+            android:textAlignment="center"
+            android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.568"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.387" />
+            app:layout_constraintVertical_bias="0.603" />
 
         <Button
             android:id="@+id/btnShowFactId"
@@ -35,22 +39,22 @@
             android:text="@string/Factid"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnNextId"
-            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintHorizontal_bias="0.485"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/birdtextId"
-            app:layout_constraintVertical_bias="0.521" />
+            app:layout_constraintVertical_bias="0.304" />
 
         <Button
             android:id="@+id/btnNextId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="64dp"
+            android:layout_marginEnd="60dp"
 
             android:text="next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/birdtextId"
-            app:layout_constraintVertical_bias="0.521" />
+            app:layout_constraintVertical_bias="0.304" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -18,8 +18,9 @@
             app:destination="@id/fact_Fragment" />
         <argument
             android:name="indexBird"
-            app:argType="integer"
-            android:defaultValue="0"/>
+            android:defaultValue="0"
+            app:argType="integer" />
+
     </fragment>
 
     <fragment
@@ -43,6 +44,11 @@
             android:name="textbird"
             android:defaultValue="0"
             app:argType="string" />
+        <argument
+            android:name="typeBird"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
         <action
             android:id="@+id/action_fact_Fragment_to_nav_guesswho"
             app:destination="@id/nav_guesswho" />

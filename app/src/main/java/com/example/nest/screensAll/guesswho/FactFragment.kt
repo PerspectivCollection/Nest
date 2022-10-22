@@ -1,6 +1,7 @@
 package com.example.nest.screensAll.guesswho
 
 //app
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,6 @@ class FactFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: FactViewModel by viewModels()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,21 +29,35 @@ class FactFragment : Fragment() {
         val args = FactFragmentArgs.fromBundle(requireArguments())
 
         viewModel.textbird = args.textbird
+        viewModel.typeBird = args.typeBird
         binding.birdtextId.text = "${viewModel.textbird}"
 
         Toast.makeText(context, viewModel.textbird, Toast.LENGTH_LONG).show()
+        //todo make a duck/gouse text
 
-        //add on index
-//        Toast.makeText(context, viewModel.indexBird, Toast.LENGTH_LONG).show()
-
-        binding.btnNextId.setOnClickListener() {
-            val some = FactFragmentDirections.actionFactFragmentToNavGuesswho()
-            some.indexBird = viewModel.indexBird.value?:0
-            NavHostFragment.findNavController(this).navigate(some)
+        //todo bytt ut textbird med type duck variabel
+        if (viewModel.typeBird) {
+            binding.birdtextId.setBackgroundColor(Color.GREEN)
+        } else {
+            binding.birdtextId.setBackgroundColor(Color.RED)
         }
+
+        //todo shift out string with a list that are emty
+        if (viewModel.indexBird.toString() != "")
+            binding.btnNextId.setOnClickListener() {
+                reapeatGuessWho()
+            }
+
 
         return binding.root
     }
+
+    fun reapeatGuessWho() {
+        val some = FactFragmentDirections.actionFactFragmentToNavGuesswho()
+        some.indexBird = viewModel.indexBird.value ?: 0
+        NavHostFragment.findNavController(this).navigate(some)
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
