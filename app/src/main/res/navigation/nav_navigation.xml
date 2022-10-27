@@ -15,11 +15,13 @@
 
         <action
             android:id="@+id/action_nav_guesswho_to_fact_Fragment"
-            app:destination="@id/fact_Fragment" />
+            app:destination="@id/fact_Fragment"
+            app:popUpToInclusive="true"
+            app:popUpToSaveState="true"/>
         <argument
-            android:name="indexBird"
-            android:defaultValue="0"
-            app:argType="integer" />
+            android:name="removeIndexFalse"
+            android:defaultValue="false"
+            app:argType="boolean" />
 
     </fragment>
 
@@ -51,7 +53,10 @@
 
         <action
             android:id="@+id/action_fact_Fragment_to_nav_guesswho"
-            app:destination="@id/nav_guesswho" />
+            app:destination="@id/nav_guesswho"
+            app:popUpTo="@id/nav_guesswho"
+            app:popUpToInclusive="true"
+           />
     </fragment>
 
 

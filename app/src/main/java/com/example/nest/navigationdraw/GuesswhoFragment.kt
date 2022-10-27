@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -22,69 +21,92 @@ class GuesswhoFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: GuesswhoViewModel by viewModels()
 
-    //start at index 0 in bird list
-//todo generer en tilfeldig liste med birds
-    var atNumberIndex = 0
+
+//todo set index for witch birds that have bin used. pick cird bast on the last random added
 
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
 //    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.lsitsetused.add(10)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+
         _binding = FragmentGuesswhoBinding.inflate(inflater, container, false)
         //data bindet , can now set variabls
         binding.sendBirdData = viewModel
         binding.lifecycleOwner = this
 
+//        var some = viewModel.lsitsetused
+
         var args = GuesswhoFragmentArgs.fromBundle(requireArguments())
+        viewModel.removeIndexFalse = args.removeIndexFalse
+//        Toast.makeText(context,  Bird.getBird().toString(), Toast.LENGTH_LONG).show()
 
-        viewModel.indexBird = args.indexBird
+        if (viewModel.removeIndexFalse) {
+            viewModel.whenNext()
+        }
+
+//        Toast.makeText(context, "${viewModel.lsitsetused.toString()}", Toast.LENGTH_LONG).show()
+//        Toast.makeText(context, "${}", Toast.LENGTH_LONG).show()
 
 
-        Toast.makeText(context, "${viewModel.indexBird}  ferdig", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "${viewModel.random.toString()} 0  ferdig", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "${Bird.getBird().get(0).name}", Toast.LENGTH_SHORT).show()
 
-//        atNumberIndex = viewModel.indexBird
+//        var atNumberIndex = viewModel.indexBird
 
-        val View = inflater.inflate(R.layout.fragment_guesswho, container, false)
-        var Image = View.findViewById<ImageView>(R.id.imagegoosId)
 
         binding.btnOption1id.text = "Duck"
         binding.btnOption2id.text = "Goose"
 
-        //at image index
-//        Bird.getBird().get(atNumberIndex).image?.let { Image.setImageResource(it) }
 
         //button Duck
         binding.btnOption1id.setOnClickListener() {
 //            binding.progressBar.progress += 20
 
-            val action = GuesswhoFragmentDirections.actionNavGuesswhoToFactFragment()
-            action.typeBird =
-                "Duck".equals(Bird.getBird().get(atNumberIndex).typeBird.toString()) //is statment
-            action.textbird = "${Bird.getBird().get(viewModel.indexBird).name.toString()}"
-            NavHostFragment.findNavController(this).navigate(action)
+            viewModel.whenNext()
+            Toast.makeText(context, "${viewModel.indexBird}", Toast.LENGTH_SHORT).show()
+            Bird.getBird()
+                .get(viewModel.indexBird).image?.let { binding.imagegoosId.setImageResource(it) }
+
+
+
+//            val action = GuesswhoFragmentDirections.actionNavGuesswhoToFactFragment()
+//            action.typeBird =
+//                "Duck".equals(Bird.getBird().get(atNumberIndex).typeBird.toString()) //is statment
+//            action.textbird = "${Bird.getBird().get(viewModel.indexBird).name.toString()}"
+//
+//            NavHostFragment.findNavController(this).navigate(action)
 
 //todo: add function update to viewModel
 //            atNumberIndex++
         }
+
+        //at image index
 
         //button Goose
         binding.btnOption2id.setOnClickListener() {
             //            binding.progressBar.progress += 20
             val action = GuesswhoFragmentDirections.actionNavGuesswhoToFactFragment()
             action.typeBird =
-                "Goose".equals(Bird.getBird().get(atNumberIndex).typeBird.toString()) //is statment
+                "Goose".equals(
+                    Bird.getBird().get(viewModel.indexBird).typeBird.toString()
+                ) //is statment
             action.textbird = "${Bird.getBird().get(viewModel.indexBird).name.toString()}"
             NavHostFragment.findNavController(this).navigate(action)
 //
 
         }
         updateBirdUI()
-
 
         return binding.root
     }
@@ -106,9 +128,9 @@ class GuesswhoFragment : Fragment() {
     }
 //
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        _binding = null
+//    }
 
 }

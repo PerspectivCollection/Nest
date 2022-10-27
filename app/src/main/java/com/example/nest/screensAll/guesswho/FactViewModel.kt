@@ -5,19 +5,36 @@ import androidx.lifecycle.ViewModel
 
 class FactViewModel : ViewModel() {
 
+    val lsitsetused : MutableList<Int>  = mutableListOf()
+
     var textbird : String = ""
 
-    val indexBird = MutableLiveData<Int>()
+    var typeBird : Boolean = false
 
+    val removeIndexFalse = MutableLiveData<Boolean>()
 
-     fun addNewBird() {
-         indexBird.value = indexBird.value?.plus(1)
-
-    }
 //    android:onClick="@{() ->  updateBird.addNewBird()}"
 
+
     init {
-        indexBird.value = 0
+        removeIndexFalse.value = true
         addNewBird()
     }
+
+    //todo impliment randomBird() and removeBirdFrom() list
+
+    fun addNewBird() {
+//        indexBird.value = indexBird.value?.plus(1)
+    }
+
+    //todo inplement end of gueee who
+    fun endOfGuesswho(){
+
+    }
+
+    fun skowCorectColor(){
+
+    }
+
+
 }
