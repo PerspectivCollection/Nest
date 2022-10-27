@@ -1,6 +1,5 @@
 package com.example.nest.screensAll.guesswho
 
-//app
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,29 +8,37 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.nest.R
-import com.example.nest.databinding.FragmentFactBinding
+import com.example.nest.databinding.FragmentGuessWhoStartBinding
 import com.example.nest.navigationdraw.GuesswhoViewModel
 
-class FactFragment : Fragment() {
-    private var _binding: FragmentFactBinding? = null
+class GuesswhoStartFragment : Fragment() {
+    private var _binding: FragmentGuessWhoStartBinding? = null
     private val binding get() = _binding!!
     private val viewModel: GuesswhoViewModel by viewModels()
+
+
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        val fragmentBinding = FragmentFactBinding.inflate(inflater, container, false)
+//        // Inflate the layout for this fragment
+//        return fragmentBinding.root
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFactBinding.inflate(inflater, container, false)
-        binding.updateBird = viewModel
+
+        _binding = FragmentGuessWhoStartBinding.inflate(inflater, container, false)
+//        binding.updateBird = viewModel
         binding.lifecycleOwner = this
 
-        binding.btnNextId.setOnClickListener() {
+        binding.btnOption1id.setOnClickListener(){
             navigateNext()
         }
-//todo later display a fact card
-        binding.btnShowFactId.setOnClickListener() {
-//            showFact()
-        }
+
 
 //        val args = FactFragmentArgs.fromBundle(requireArguments())
 //        viewModel.textbird = args.textbird
@@ -56,19 +63,9 @@ class FactFragment : Fragment() {
 //            }
         return binding.root
     }
-
-    // todo repite sycle
+    //repite sycle
     fun navigateNext() {
-        findNavController().navigate(R.id.action_fact_Fragment_to_guessWhoStartFragment)
-    }
-
-    //todo not jet implementet
-    fun navigateScoore() {
-        findNavController().navigate(R.id.action_fact_Fragment_to_scoorFragment)
-    }
-
-    //todo not jet implementet
-    fun showFact() {
+        findNavController().navigate(R.id.action_guessWhoStartFragment_to_fact_Fragment)
     }
 
     override fun onDestroyView() {

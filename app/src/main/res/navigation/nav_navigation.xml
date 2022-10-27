@@ -13,15 +13,13 @@
         android:label="@string/fragment_guesswho"
         tools:layout="@layout/fragment_namequiz">
 
-        <action
-            android:id="@+id/action_nav_guesswho_to_fact_Fragment"
-            app:destination="@id/fact_Fragment"
-            app:popUpToInclusive="true"
-            app:popUpToSaveState="true"/>
         <argument
             android:name="removeIndexFalse"
             android:defaultValue="false"
             app:argType="boolean" />
+        <action
+            android:id="@+id/action_nav_guesswho_to_guessWhoStartFragment"
+            app:destination="@id/guessWhoStartFragment" />
 
     </fragment>
 
@@ -52,11 +50,29 @@
             app:argType="boolean" />
 
         <action
-            android:id="@+id/action_fact_Fragment_to_nav_guesswho"
-            app:destination="@id/nav_guesswho"
-            app:popUpTo="@id/nav_guesswho"
-            app:popUpToInclusive="true"
-           />
+            android:id="@+id/action_fact_Fragment_to_scoorFragment"
+            app:destination="@id/scoorFragment" />
+        <action
+            android:id="@+id/action_fact_Fragment_to_guessWhoStartFragment"
+            app:destination="@id/guessWhoStartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoorFragment"
+        android:name="com.example.nest.screensAll.guesswho.ScoorFragment"
+        android:label="fragment_scoor"
+        tools:layout="@layout/fragment_scoor">
+        <action
+            android:id="@+id/action_scoorFragment_to_nav_guesswho"
+            app:destination="@id/nav_guesswho" />
+    </fragment>
+    <fragment
+        android:id="@+id/guessWhoStartFragment"
+        android:name="com.example.nest.screensAll.guesswho.GuesswhoStartFragment"
+        android:label="fragment_guess_who_start"
+        tools:layout="@layout/fragment_guess_who_start">
+        <action
+            android:id="@+id/action_guessWhoStartFragment_to_fact_Fragment"
+            app:destination="@id/fact_Fragment" />
     </fragment>
 
 
