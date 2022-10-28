@@ -26,7 +26,7 @@ class FactFragment : Fragment() {
         binding.viewModel = sharedviewModel
 //        binding.lifecycleOwner = this
 
-        Toast.makeText(activity, "${sharedviewModel.quantity.toString()}", Toast.LENGTH_LONG).show()
+//        Toast.makeText(activity, "${sharedviewModel.storeList.value.toString()}", Toast.LENGTH_LONG).show()
 
         binding.btnNextId.setOnClickListener() {
             navigateNext()

@@ -27,7 +27,7 @@
             android:layout_height="48dp"
             android:background="#FF9800"
 
-            android:text="@{viewModel.quantity.toString()}"
+            android:text="@{viewModel.birdindex.toString()}"
             android:textAlignment="center"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"

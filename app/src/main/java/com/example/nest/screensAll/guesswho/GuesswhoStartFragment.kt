@@ -31,41 +31,34 @@ class GuesswhoStartFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        Toast.makeText(activity, "${sharedViewModel.quantity.toString()}", Toast.LENGTH_LONG).show()
+//        Toast.makeText(context, "${sharedViewModel.storeList.toString()}", Toast.LENGTH_LONG).show()
 
         _binding = FragmentGuessWhoStartBinding.inflate(inflater, container, false)
-        binding.viewModel = sharedViewModel
+//        binding.viewModel = sharedViewModel
 //        binding.lifecycleOwner = this
 
-
-
 //todo work adding to index
-        if (sharedViewModel.quantity.value == null)
-            sharedViewModel.setQuantity(0)
+        if (sharedViewModel.birdindex.value == null)
+            sharedViewModel.setGuessBird(0)
 
+        if (sharedViewModel.progressguess.value == null)
+            sharedViewModel.progreebarstart(0)
 
         binding.btnOption1id.setOnClickListener() {
-            var someval = sharedViewModel.quantity.value?.toInt()!!
+//            var index = sharedViewModel.birdindex.value?.toInt()!!
+            var process = sharedViewModel.progressguess.value?.toInt()!!
 
-            sharedViewModel.updateIndexGuess(someval)
-
-//
-////            if (sharedViewModel.quantity.value?.toInt() != 0){
-////                someval = sharedViewModel.quantity.value?.toInt()!!
-////
-////                someval = 1
-////            }
-//            ++someval
-
-//            sharedViewModel.setQuantity(someval)
-
-//            rotate = 1
+            sharedViewModel.updateIndexGuess()
 
 
+            sharedViewModel.progreebar(process)
 
             navigateNext()
 
         }
+
+//        Log.i(sharedViewModel.birdindex.value.toString(), "som")
+
 
 //        val args = FactFragmentArgs.fromBundle(requireArguments())
 //        viewModel.textbird = args.textbird

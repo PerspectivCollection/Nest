@@ -1,37 +1,41 @@
 package com.example.nest.navigationdraw
 
+import android.provider.ContactsContract.RawContacts.Data
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.nest.model.Bird
 
 class GuesswhoViewModel : ViewModel() {
-    private val _quantity = MutableLiveData<Int>()
-    val quantity: LiveData<Int>
-    get() = _quantity
+    private val _birdindex = MutableLiveData<Int>()
+    val birdindex: LiveData<Int>
+    get() = _birdindex
 
-//    fun setQuantity(index: Int) {
-//        _quantity.value = index.plus(1)
-////        updateIndexGuess()
-//    }
-    fun setQuantity(index: Int) {
-        _quantity.value = index
-//        updateIndexGuess()
+    private val _progressguess = MutableLiveData<Int>()
+    val progressguess : LiveData<Int>
+    get() = _progressguess
+
+      val storeList = mutableListOf<Int>()
+
+    fun setGuessBird(index: Int) {
+        _birdindex.value = index
     }
 
-    fun resetquantety(){
-        _quantity.value = 0
+    fun updateIndexGuess(){
+        var store = (0..20).random()
+        _birdindex.value = store
+        storeList.add(store)
+        Log.i(storeList.toString(), "dsom")
     }
 
-    fun updateIndexGuess(addinx : Int){
-        _quantity.value =addinx.plus(1)
-
+    fun progreebarstart(index: Int){
+        _progressguess.value = index
     }
 
+    fun progreebar(addprogres: Int){
+        _progressguess.value = addprogres.plus(20)
+    }
 
-    //todo var proggres
-    //todo var indexbird
-    //todo var next bird
     //todo fun random bird
     //todo fun  default value resetBird list
 }
