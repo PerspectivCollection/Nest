@@ -7,15 +7,24 @@ import com.example.nest.model.Bird
 
 class GuesswhoViewModel : ViewModel() {
     private val _quantity = MutableLiveData<Int>()
-    val quantity: LiveData<Int> = _quantity
+    val quantity: LiveData<Int>
+    get() = _quantity
 
-    fun setQuantity(numberCupcakes: Int) {
-        _quantity.value = numberCupcakes
-        updateIndexGuess()
+//    fun setQuantity(index: Int) {
+//        _quantity.value = index.plus(1)
+////        updateIndexGuess()
+//    }
+    fun setQuantity(index: Int) {
+        _quantity.value = index
+//        updateIndexGuess()
     }
 
-    fun updateIndexGuess(){
-        quantity.value?.plus(1)
+    fun resetquantety(){
+        _quantity.value = 0
+    }
+
+    fun updateIndexGuess(addinx : Int){
+        _quantity.value =addinx.plus(1)
 
     }
 

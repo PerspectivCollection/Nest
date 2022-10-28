@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.nest.R
 import com.example.nest.databinding.FragmentGuessWhoStartBinding
@@ -14,8 +15,7 @@ import com.example.nest.navigationdraw.GuesswhoViewModel
 class GuesswhoStartFragment : Fragment() {
     private var _binding: FragmentGuessWhoStartBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: GuesswhoViewModel by viewModels()
-
+    private val sharedViewModel: GuesswhoViewModel by activityViewModels()
 
 //    override fun onCreateView(
 //        inflater: LayoutInflater, container: ViewGroup?,
@@ -29,17 +29,43 @@ class GuesswhoStartFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
+
+        Toast.makeText(activity, "${sharedViewModel.quantity.toString()}", Toast.LENGTH_LONG).show()
 
         _binding = FragmentGuessWhoStartBinding.inflate(inflater, container, false)
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = this
+        binding.viewModel = sharedViewModel
+//        binding.lifecycleOwner = this
 
-        binding.btnOption1id.setOnClickListener(){
-            viewModel.setQuantity(1)
+
+
+//todo work adding to index
+        if (sharedViewModel.quantity.value == null)
+            sharedViewModel.setQuantity(0)
+
+
+        binding.btnOption1id.setOnClickListener() {
+            var someval = sharedViewModel.quantity.value?.toInt()!!
+
+            sharedViewModel.updateIndexGuess(someval)
+
+//
+////            if (sharedViewModel.quantity.value?.toInt() != 0){
+////                someval = sharedViewModel.quantity.value?.toInt()!!
+////
+////                someval = 1
+////            }
+//            ++someval
+
+//            sharedViewModel.setQuantity(someval)
+
+//            rotate = 1
+
+
+
             navigateNext()
-        }
 
+        }
 
 //        val args = FactFragmentArgs.fromBundle(requireArguments())
 //        viewModel.textbird = args.textbird
@@ -64,6 +90,18 @@ class GuesswhoStartFragment : Fragment() {
 //            }
         return binding.root
     }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding?.apply {
+            lifecycleOwner = viewLifecycleOwner
+            viewModel = sharedViewModel
+            startGuesswhoFragment = this@GuesswhoStartFragment
+        }
+    }
+
     //repite sycle
     fun navigateNext() {
         findNavController().navigate(R.id.action_guessWhoStartFragment_to_fact_Fragment)
