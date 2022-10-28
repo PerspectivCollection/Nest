@@ -8,7 +8,10 @@ import android.provider.SyncStateContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.nest.model.Bird
+
 class NameQuizFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
@@ -16,6 +19,12 @@ class NameQuizFragment : Fragment() {
 
 
     ): View? {
+
+
+
+
+
+        Toast.makeText(context, "${Bird.getBird().get(1).name}", Toast.LENGTH_LONG).show()
 
 
 

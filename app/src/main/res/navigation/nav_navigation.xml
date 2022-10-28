@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/nav_namequiz"
-        android:name="com.example.nest.navigationdraw.NameQuizFragment"
+        android:name="com.example.nest.Name_Quiz.NameQuizFragment"
         android:label="@string/fragment_name_quizz" />
 
     <fragment
