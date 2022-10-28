@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="factfragment"
+            type="com.example.nest.screensAll.guesswho.FactFragment" />
 
         <variable
-            name="updateBird"
+            name="viewModel"
             type="com.example.nest.navigationdraw.GuesswhoViewModel" />
     </data>
 

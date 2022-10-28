@@ -5,9 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="guesswhoFragment"
+            type="com.example.nest.navigationdraw.GuesswhoFragment" />
 
         <variable
-            name="sendBirdData"
+            name="viewModel"
             type="com.example.nest.navigationdraw.GuesswhoViewModel" />
     </data>
 

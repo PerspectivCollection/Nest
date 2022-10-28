@@ -42,22 +42,8 @@ class GuesswhoFragment : Fragment() {
 
         _binding = FragmentGuesswhoBinding.inflate(inflater, container, false)
         //data bindet , can now set variabls
-        binding.sendBirdData = viewModel
+        binding.viewModel = viewModel
         binding.lifecycleOwner = this
-
-//        var some = viewModel.lsitsetused
-
-//        var args = GuesswhoFragmentArgs.fromBundle(requireArguments())
-//        viewModel.removeIndexFalse = args.removeIndexFalse
-////        Toast.makeText(context,  Bird.getBird().toString(), Toast.LENGTH_LONG).show()
-//
-//        if (viewModel.removeIndexFalse) {
-//            viewModel.whenNext()
-//        }
-
-//        Toast.makeText(context, "${viewModel.lsitsetused.toString()}", Toast.LENGTH_LONG).show()
-//        Toast.makeText(context, "${}", Toast.LENGTH_LONG).show()
-
 
 //        Toast.makeText(context, "${viewModel.random.toString()} 0  ferdig", Toast.LENGTH_SHORT).show()
         Toast.makeText(context, "${Bird.getBird().get(0).name}", Toast.LENGTH_SHORT).show()

@@ -32,10 +32,11 @@ class GuesswhoStartFragment : Fragment() {
     ): View {
 
         _binding = FragmentGuessWhoStartBinding.inflate(inflater, container, false)
-//        binding.updateBird = viewModel
+        binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
         binding.btnOption1id.setOnClickListener(){
+            viewModel.setQuantity(1)
             navigateNext()
         }
 
