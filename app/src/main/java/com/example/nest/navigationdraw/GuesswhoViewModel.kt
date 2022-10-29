@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class GuesswhoViewModel : ViewModel() {
-
     private val _birdindex = MutableLiveData<Int>()
     val birdindex: LiveData<Int>
         get() = _birdindex
@@ -22,6 +21,9 @@ class GuesswhoViewModel : ViewModel() {
 
     val storeList = mutableListOf<Int>()
 
+    init {
+//        _typebird.value = false
+    }
 
     fun setGuessBird(index: Int) {
         _birdindex.value = index
@@ -32,7 +34,6 @@ class GuesswhoViewModel : ViewModel() {
         var store = (0..4).random() //todo set 4 to round 20
         _birdindex.value = store
         storeList.add(store)
-        Log.i(storeList.toString(), "dsom")
     }
 
     fun progreebarstart(index: Int) {
@@ -46,5 +47,13 @@ class GuesswhoViewModel : ViewModel() {
     fun resetProgress(){
         storeList.removeAll(storeList)
         _progressguess.value = 0
+    }
+
+    fun rigthGuess(){
+        _typebird.value = true  // todo fix this
+    }
+
+    fun resetGuess(){
+        _typebird.value = false  // todo fix this
     }
 }

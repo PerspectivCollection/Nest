@@ -35,8 +35,6 @@ class FactFragment : Fragment() {
             binding.birdtextId.setBackgroundColor(Color.RED)
         }
 
-
-
         binding.btnNextId.setOnClickListener() {
             var process = sharedViewModel.progressguess.value?.toInt()!!
             sharedViewModel.updateIndexGuess()
@@ -46,6 +44,7 @@ class FactFragment : Fragment() {
             if (process == 100) {
                 navigateScoore()
             } else {
+                sharedViewModel.resetGuess()
                 navigateNext()
             }
         }

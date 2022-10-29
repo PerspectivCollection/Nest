@@ -33,23 +33,28 @@ class GuesswhoStartFragment : Fragment() {
         if (sharedViewModel.birdindex.value == null)
             sharedViewModel.setGuessBird(0)
 
-        sharedViewModel.birdindex.value?.toInt()?.let { Bird.getBird().get(it).image?.let { binding.imagegoosId.setImageResource(it) } }
+        sharedViewModel.birdindex.value?.toInt()?.let {
+            Bird.getBird().get(it).image?.let { binding.imagegoosId.setImageResource(it) }
+        }
 
         if (sharedViewModel.progressguess.value == null)
             sharedViewModel.progreebarstart(0)
 
         binding.btnOption1id.setOnClickListener() {
-            sharedViewModel.typebird.value //todo logi for bird type
-            navigateNext()
+            if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird().get(it1).typeBird.toString() } == "Duck" ) {
+                sharedViewModel.rigthGuess()
+            }
+            navigateNext() //todo put this in a if
         }
 
         binding.btnOption2id.setOnClickListener() {
-            sharedViewModel.typebird.value
+            if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird().get(it1).typeBird.toString() } == "Goose" ) {
+                sharedViewModel.rigthGuess()
+            }
             navigateNext()
         }
         return binding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -60,6 +65,7 @@ class GuesswhoStartFragment : Fragment() {
             startGuesswhoFragment = this@GuesswhoStartFragment
         }
     }
+
     //repite sycle
     fun navigateNext() {
         findNavController().navigate(R.id.action_guessWhoStartFragment_to_fact_Fragment)
