@@ -18,6 +18,8 @@
 
     //nav/fragment-guessWho
     <string name="fragment_guesswho">Guess Who</string>
+    <string name="guesswho_duck">Duck</string>
+    <string name="guesswho_goose">Goose</string>
 
     //nav/fragment-namequizz
     <string name="fragment_name_quizz">Name Quizz</string>

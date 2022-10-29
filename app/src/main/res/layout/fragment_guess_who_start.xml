@@ -2,10 +2,10 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="startGuesswhoFragment"
             type="com.example.nest.screensAll.guesswho.GuesswhoStartFragment" />
@@ -36,13 +36,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.106" />
 
-<!--        android:text="@string/fragment_guesswho"-->
+        <!--        android:text="@string/fragment_guesswho"-->
 
         <Button
             android:id="@+id/btnOption1id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fragment_guesswho"
+            android:text="@string/guesswho_duck"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.247"
@@ -54,7 +54,7 @@
             android:id="@+id/btnOption2id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fragment_guesswho"
+            android:text="@string/guesswho_goose"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.445"
@@ -66,8 +66,8 @@
             android:id="@+id/imagegoosId"
             android:layout_width="299dp"
             android:layout_height="262dp"
+            android:contentDescription="{birdImage}"
             android:text="@string/fragment_guesswho"
-            android:contentDescription="birdImage"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
