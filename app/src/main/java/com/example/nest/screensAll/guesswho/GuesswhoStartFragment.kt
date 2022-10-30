@@ -33,22 +33,22 @@ class GuesswhoStartFragment : Fragment() {
         if (sharedViewModel.birdindex.value == null)
             sharedViewModel.setGuessBird(0)
 
-        sharedViewModel.birdindex.value?.toInt()?.let {
-            Bird.getBird().get(it).image?.let { binding.imagegoosId.setImageResource(it) }
+        sharedViewModel.birdindex.value?.toInt()?.let { it ->
+            Bird.getBird()[it].image.let { binding.imagegoosId.setImageResource(it) }
         }
 
         if (sharedViewModel.progressguess.value == null)
             sharedViewModel.progreebarstart(0)
 
         binding.btnOption1id.setOnClickListener() {
-            if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird().get(it1).typeBird.toString() } == "Duck" ) {
+            if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird()[it1].typeBird.toString() } == "Duck" ) {
                 sharedViewModel.rigthGuess()
             }
             navigateNext() //todo put this in a if
         }
 
         binding.btnOption2id.setOnClickListener() {
-            if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird().get(it1).typeBird.toString() } == "Goose" ) {
+            if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird()[it1].typeBird.toString() } == "Goose" ) {
                 sharedViewModel.rigthGuess()
             }
             navigateNext()
