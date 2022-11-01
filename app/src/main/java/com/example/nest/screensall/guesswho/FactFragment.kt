@@ -28,9 +28,10 @@ class FactFragment : Fragment() {
 
 //        Toast.makeText(activity, "${sharedviewModel.storeList.value.toString()}", Toast.LENGTH_LONG).show()
 
-        //todo bytt ut textbird med type duck variabel
+        //todo corect or wrong green or red
         if (sharedViewModel.typebird.value == true) {
             binding.birdtextId.setBackgroundColor(Color.GREEN)
+            //todo add text
         } else {
             binding.birdtextId.setBackgroundColor(Color.RED)
         }
@@ -53,27 +54,6 @@ class FactFragment : Fragment() {
 //            showFact()
         }
 
-//        val args = FactFragmentArgs.fromBundle(requireArguments())
-//        viewModel.textbird = args.textbird
-////        viewModel.typeBird = args.typeBird
-//        binding.birdtextId.text = "${viewModel.textbird}"
-//
-//        Toast.makeText(context, "${viewModel.lsitsetused.toString()}", Toast.LENGTH_LONG).show()
-//
-//        //todo make a duck/gouse text
-//
-//        //todo bytt ut textbird med type duck variabel
-//        if (viewModel.typeBird) {
-//            binding.birdtextId.setBackgroundColor(Color.GREEN)
-//        } else {
-//            binding.birdtextId.setBackgroundColor(Color.RED)
-//        }
-//
-//        //todo shift out string with a list that are emty
-//        if (viewModel.removeIndexFalse.toString() != "")
-//            binding.btnNextId.setOnClickListener() {
-//                navigateNext()
-//            }
         return binding.root
     }
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="factfragment"
             type="com.example.nest.screensall.guesswho.FactFragment" />
@@ -36,8 +37,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.603" />
-
-<!--     @string/show_bird   d-->
 
         <Button
             android:id="@+id/btnShowFactId"
