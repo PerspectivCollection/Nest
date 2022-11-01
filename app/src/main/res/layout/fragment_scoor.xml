@@ -6,7 +6,7 @@
     <data>
         <variable
             name="scoorFragment"
-            type="com.example.nest.screensAll.guesswho.ScoorFragment" />
+            type="com.example.nest.screensall.guesswho.ScoorFragment" />
 
         <variable
             name="viewModel"
@@ -17,7 +17,7 @@
         android:id="@+id/factId"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screensAll.guesswho.ScoorFragment">
+        tools:context=".screensall.guesswho.ScoorFragment">
 
         <!-- TODO: scoor -->
 

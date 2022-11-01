@@ -6,7 +6,7 @@
     <data>
         <variable
             name="factfragment"
-            type="com.example.nest.screensAll.guesswho.FactFragment" />
+            type="com.example.nest.screensall.guesswho.FactFragment" />
 
         <variable
             name="viewModel"
@@ -17,7 +17,7 @@
         android:id="@+id/factId"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screensAll.guesswho.FactFragment">
+        tools:context=".screensall.guesswho.FactFragment">
 
         <!-- TODO: fact -->
 

@@ -8,7 +8,7 @@
 
         <variable
             name="startGuesswhoFragment"
-            type="com.example.nest.screensAll.guesswho.GuesswhoStartFragment" />
+            type="com.example.nest.screensall.guesswho.GuesswhoStartFragment" />
 
         <variable
             name="viewModel"
@@ -19,7 +19,7 @@
         android:id="@+id/guesswhostartid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screensAll.guesswho.GuesswhoStartFragment">
+        tools:context=".screensall.guesswho.GuesswhoStartFragment">
 
         <!-- TODO: start -->
 
@@ -35,8 +35,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.106" />
-
-        <!--        android:text="@string/fragment_guesswho"-->
 
         <Button
             android:id="@+id/btnOption1id"

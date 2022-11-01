@@ -1,21 +1,21 @@
-package com.example.nest.screensAll.guesswho
+package com.example.nest.screensall.audioquiz
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.nest.R
-import com.example.nest.databinding.FragmentGuessWhoStartBinding
+import com.example.nest.databinding.FragmentAudioGuessBinding
 import com.example.nest.model.Bird
-import com.example.nest.navigationdraw.GuesswhoViewModel
+import com.example.nest.navigationdraw.AudioquizViewModel
 
-class GuesswhoStartFragment : Fragment() {
-    private var _binding: FragmentGuessWhoStartBinding? = null
+class AudioGuessFragment : Fragment() {
+    private var _binding: FragmentAudioGuessBinding? = null
     private val binding get() = _binding!!
-    private val sharedViewModel: GuesswhoViewModel by activityViewModels()
+    private val sharedViewModel: AudioquizViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,18 +24,23 @@ class GuesswhoStartFragment : Fragment() {
 
 //        Toast.makeText(context, "${sharedViewModel.storeList.toString()}", Toast.LENGTH_LONG).show()
 
-        _binding = FragmentGuessWhoStartBinding.inflate(inflater, container, false)
+        _binding = FragmentAudioGuessBinding.inflate(inflater, container, false)
         binding.viewModel = sharedViewModel //dot now what dey dom now
         binding.lifecycleOwner = this //dot now what dey dom now
 
 
-//todo work adding to index
+
         if (sharedViewModel.birdindex.value == null)
             sharedViewModel.setGuessBird(0)
+//todo add sound
 
-        sharedViewModel.birdindex.value?.toInt()?.let { it ->
-            Bird.getBird()[it].image.let { binding.imagegoosId.setImageResource(it) }
-        }
+//        sharedViewModel.birdindex.value?.toInt()?.let { it ->
+//            Bird.getBird()[it].image.let {
+//                if (it != null) {
+//                    binding.imagegoosId.setImageResource(it)
+//                }
+//            }
+//        }
 
         if (sharedViewModel.progressguess.value == null)
             sharedViewModel.progreebarstart(0)
@@ -62,7 +67,7 @@ class GuesswhoStartFragment : Fragment() {
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
-            startGuesswhoFragment = this@GuesswhoStartFragment
+            audioGuess = this@AudioGuessFragment
         }
     }
 

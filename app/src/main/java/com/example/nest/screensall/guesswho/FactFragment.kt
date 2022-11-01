@@ -1,4 +1,4 @@
-package com.example.nest.screensAll.guesswho
+package com.example.nest.screensall.guesswho
 
 //app
 import android.graphics.Color
