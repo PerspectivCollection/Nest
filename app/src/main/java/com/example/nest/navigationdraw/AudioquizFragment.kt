@@ -27,7 +27,6 @@ class AudioquizFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-
         binding.btnStartId.setOnClickListener() {
             navigateNext()
         }

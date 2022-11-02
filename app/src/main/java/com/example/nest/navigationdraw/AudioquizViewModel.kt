@@ -29,19 +29,12 @@ class AudioquizViewModel : ViewModel() {
         _birdindex.value = index
     }
 
-    //adds elment to end of list
-    fun updateIndexGuess() {
-        var store = (0..3).random() //todo set 4 to round 20 , rmember to have -1 less then the list length
-        _birdindex.value = store
-        storeList.add(store)
-    }
-
     fun progreebarstart(index: Int) {
         _progressguess.value = index
     }
 
     fun progreebar(addprogres: Int) {
-        _progressguess.value = addprogres.plus(20)
+        _progressguess.value = addprogres.plus(0)
     }
 
     fun resetProgress(){
@@ -56,4 +49,9 @@ class AudioquizViewModel : ViewModel() {
     fun resetGuess(){
         _typebird.value = false  // todo fix this
     }
+
+    fun storeAudiGuess(num : Int){
+        storeList.add(num)
+    }
+
 }

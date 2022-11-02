@@ -31,7 +31,7 @@ class GuesswhoStartFragment : Fragment() {
 
 //todo work adding to index
         if (sharedViewModel.birdindex.value == null)
-            sharedViewModel.setGuessBird(0)
+            sharedViewModel.setGuessBird((0..33).random())
 
         sharedViewModel.birdindex.value?.toInt()?.let { it ->
             Bird.getBird()[it].image.let {
@@ -45,14 +45,14 @@ class GuesswhoStartFragment : Fragment() {
             sharedViewModel.progreebarstart(0)
 
         binding.btnOption1id.setOnClickListener() {
-            if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird()[it1].typeBird.toString() } == "Duck" ) {
+            if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird()[it1].typeBird.toString() } == "Duck") {
                 sharedViewModel.rigthGuess()
             }
             navigateNext() //todo put this in a if
         }
 
         binding.btnOption2id.setOnClickListener() {
-            if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird()[it1].typeBird.toString() } == "Goose" ) {
+            if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird()[it1].typeBird.toString() } == "Goose") {
                 sharedViewModel.rigthGuess()
             }
             navigateNext()

@@ -6,17 +6,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.nest.R
 import com.example.nest.databinding.FragmentFactBinding
 import com.example.nest.navigationdraw.GuesswhoViewModel
 
 class FactFragment : Fragment() {
+    private val args: FactFragmentArgs by navArgs()
+
     private var _binding: FragmentFactBinding? = null
     private val binding get() = _binding!!
     private val sharedViewModel: GuesswhoViewModel by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +31,8 @@ class FactFragment : Fragment() {
         binding.viewModel = sharedViewModel
         binding.lifecycleOwner = this
 
-//        Toast.makeText(activity, "${sharedviewModel.storeList.value.toString()}", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "${sharedViewModel.storeList.toString()}", Toast.LENGTH_LONG).show()
+
 
         //todo corect or wrong green or red
         if (sharedViewModel.typebird.value == true) {
@@ -37,20 +43,20 @@ class FactFragment : Fragment() {
         }
 
         binding.btnNextId.setOnClickListener() {
-            var process = sharedViewModel.progressguess.value?.toInt()!!
-            sharedViewModel.updateIndexGuess()
+            val process = sharedViewModel.progressguess.value?.toInt()!!
 
-            sharedViewModel.progreebar(process)
-            //100 prosen complet go to score
             if (process == 100) {
                 navigateScoore()
             } else {
+                sharedViewModel.progreebar(process)
                 sharedViewModel.resetGuess()
-                navigateNext()
+                sharedViewModel.updateIndexGuess()
+                findNavController().navigate(R.id.action_fact_Fragment_to_guessWhoStartFragment)
             }
         }
 //todo later display a fact card
         binding.btnShowFactId.setOnClickListener() {
+            navigateNext()
 //            showFact()
         }
 
@@ -59,6 +65,10 @@ class FactFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        sharedViewModel.setGuessBird(args.audioIndexBird.toInt())
+        Toast.makeText(context, "${sharedViewModel.storeList.toString()}", Toast.LENGTH_LONG).show()
+
 
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
@@ -69,7 +79,15 @@ class FactFragment : Fragment() {
 
     // todo repite sycle
     fun navigateNext() {
-        findNavController().navigate(R.id.action_fact_Fragment_to_guessWhoStartFragment)
+//
+//        if (sharedViewModel.storeList.size == 5){
+//            findNavController().navigate(R.id.action_fact_Fragment_to_scoorFragment)
+//        }
+        val action = FactFragmentDirections.actionFactFragmentToAudioGuessFragment2()
+
+//        action.audiobirdindex = sharedViewModel.birdindex.value?.toInt()!!
+        findNavController().navigate(action)
+
     }
 
     //todo not jet implementet
