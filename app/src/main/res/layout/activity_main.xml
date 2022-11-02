@@ -9,6 +9,7 @@
     tools:context=".navigationdraw.MainActivity"
     tools:openDrawer="start">
 
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -51,6 +52,7 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/navigation_draw_header"
         app:menu="@menu/activity_main2_drawer" />
+
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

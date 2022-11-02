@@ -40,5 +40,8 @@
     //nav-fragment-fact
     <string name="show_bird">afdsfdasfd</string>
     <string name="Factid">Fact</string>
+    <string name="todo">TODO</string>
+    <string name="play_quiz">Play Quiz</string>
+    <string name="play">Play</string>
 
 </resources>
