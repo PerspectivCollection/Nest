@@ -12,6 +12,10 @@ import com.example.nest.databinding.FragmentNamequizBinding
 
 class NameQuizFragment : Fragment() {
     lateinit var binding: FragmentNamequizBinding
+
+
+    private lateinit var questionList: ArrayList<Question>
+
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?

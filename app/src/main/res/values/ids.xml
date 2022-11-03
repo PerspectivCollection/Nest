@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="QustionQuizGame2" type="id" />
+    <item name="action_QustionQuizGame_to_scor3" type="id" />
+    <item name="QustionQuizGame_2" type="id" />
+    <item name="scor_3" type="id" />
+
+</resources>

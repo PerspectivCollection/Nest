@@ -31,6 +31,11 @@
             android:id="@+id/action_nav_namequiz_to_qustionQuizGame"
             app:destination="@id/qustionQuizGame" />
     </fragment>
+    <fragment
+        android:id="@+id/qustionQuizGame"
+        android:name="com.example.nest.namequiz.QustionQuizGame"
+        android:label="QustionQuizGame" />
+
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -78,10 +83,6 @@
             android:id="@+id/action_guessWhoStartFragment_to_fact_Fragment"
             app:destination="@id/fact_Fragment" />
     </fragment>
-    <fragment
-        android:id="@+id/qustionQuizGame"
-        android:name="com.example.nest.namequiz.QustionQuizGame"
-        android:label="QustionQuizGame" />
 
 
 </navigation>
