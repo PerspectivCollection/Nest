@@ -22,10 +22,10 @@
     <string name="guesswho_goose">Goose</string>
 
     //nav/fragment-namequizz
-    <string name="fragment_name_quizz">Name Quizz</string>
+    <string name="fragment_name_quizz">Name Quiz</string>
 
     //nav/fragment-audioquizz
-    <string name="fragment_audio_quizz">Audio Quizz</string>
+    <string name="fragment_audio_quizz">Audio Quiz</string>
 
 
     //nav/fragment-gallery
