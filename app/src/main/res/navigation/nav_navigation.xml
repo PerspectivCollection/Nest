@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/nav_namequiz"
         android:name="com.example.nest.screensall.namequiz.NameQuizFragment"
-        android:label="@string/fragment_name_quizz" >
+        android:label="@string/fragment_name_quizz">
         <action
             android:id="@+id/action_nav_namequiz_to_qustionQuizGame"
             app:destination="@id/qustionQuizGame" />
@@ -34,7 +34,11 @@
     <fragment
         android:id="@+id/qustionQuizGame"
         android:name="com.example.nest.screensall.namequiz.QustionQuizGame"
-        android:label="QustionQuizGame" />
+        android:label="QustionQuizGame" >
+        <action
+            android:id="@+id/action_qustionQuizGame_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
 
 
     <fragment
@@ -117,13 +121,17 @@
         android:id="@+id/audioGuessFragment"
         android:name="com.example.nest.screensall.audioquiz.AudioGuessFragment"
         android:label="fragment_audio_guess"
-        tools:layout="@layout/fragment_audio_guess" >
+        tools:layout="@layout/fragment_audio_guess">
         <action
             android:id="@+id/action_audioGuessFragment_to_fact_Fragment2"
             app:destination="@id/fact_Fragment" />
         <argument
             android:name="audiobirdindex"
-            app:argType="integer"
-            android:defaultValue="0" />
+            android:defaultValue="0"
+            app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.nest.screensall.namequiz.ResultFragment"
+        android:label="ResultFragment" />
 </navigation>

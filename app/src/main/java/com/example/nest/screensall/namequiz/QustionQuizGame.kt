@@ -1,4 +1,5 @@
 package com.example.nest.screensall.namequiz
+
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -11,17 +12,18 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.nest.R
 import com.example.nest.databinding.FragmentQustionQuizGameBinding
 import com.example.nest.model.Constanst
 import com.example.nest.model.Question
 
 
-class QustionQuizGame : Fragment(), View.OnClickListener{
+class QustionQuizGame : Fragment(), View.OnClickListener {
     lateinit var binding: FragmentQustionQuizGameBinding
-    private lateinit var mQuestionsList : ArrayList<Question>
-    private  var mSelectedPosition: Int = 0
-    private var mCorrectAnswer : Int = 0
+    private lateinit var mQuestionsList: ArrayList<Question>
+    private var mSelectedPosition: Int = 0
+    private var mCorrectAnswer: Int = 0
     var mCurrrentPosition: Int = 1
 
 
@@ -32,7 +34,8 @@ class QustionQuizGame : Fragment(), View.OnClickListener{
 
 
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_qustion_quiz_game, container, false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_qustion_quiz_game, container, false)
         mQuestionsList = Constanst.getQuestion()
 
         Log.i("info", mCurrrentPosition.toString())
@@ -43,13 +46,19 @@ class QustionQuizGame : Fragment(), View.OnClickListener{
         binding.option4.setOnClickListener(this)
         binding.option1.setOnClickListener(this)
 
+
+        binding.btnSubmit.setOnClickListener {
+            findNavController().navigate(R.id.resultFragment)
+        }
+
         setQuestion()
         return binding.root
     }
+
     private fun setQuestion() {
 
 
-        val question: Question = mQuestionsList[mCurrrentPosition -1]
+        val question: Question = mQuestionsList[mCurrrentPosition - 1]
 
         binding.QuestionId.text = question.question
         binding.imageView.setImageResource(question.image)
@@ -62,15 +71,15 @@ class QustionQuizGame : Fragment(), View.OnClickListener{
         binding.progressBar.text = "$mCurrrentPosition" + "/" + binding.pb.max
 
         defaultNewQuation()
-        if (mCurrrentPosition == mQuestionsList.size){
+        if (mCurrrentPosition == mQuestionsList.size) {
 
             binding.btnSubmit.text = "Quiz Finished"
 
         } else {
 
             binding.btnSubmit.text = "Submit"
+        }
     }
-}
 
     private fun defaultNewQuation() {
 
@@ -92,21 +101,24 @@ class QustionQuizGame : Fragment(), View.OnClickListener{
     }
 
     override fun onClick(V: View?) {
-        when(V?.id){
-            R.id.option1->{
-             selectedOptionView(binding.option1,1)
+        when (V?.id) {
+            R.id.option1 -> {
+                selectedOptionView(binding.option1, 1)
 
             }
-            R.id.option2->{selectedOptionView(binding.option2,2)
+            R.id.option2 -> {
+                selectedOptionView(binding.option2, 2)
 
             }
-            R.id.option3->{selectedOptionView(binding.option3,3)
+            R.id.option3 -> {
+                selectedOptionView(binding.option3, 3)
 
             }
-            R.id.option4->{selectedOptionView(binding.option4,4)
+            R.id.option4 -> {
+                selectedOptionView(binding.option4, 4)
 
             }
-            R.id.btnSubmit-> {
+            R.id.btnSubmit -> {
                 if (mSelectedPosition == 0) {
                     mCurrrentPosition++
                     when {
@@ -123,7 +135,10 @@ class QustionQuizGame : Fragment(), View.OnClickListener{
                     val question = mQuestionsList[mCurrrentPosition - 1]
 
                     if (question!!.corretAns != mSelectedPosition) {
-                        answerView(mCurrrentPosition, R.color.md_theme_dark_tertiary) //todo som color change
+                        answerView(
+                            mCurrrentPosition,
+                            R.color.md_theme_dark_tertiary
+                        )
                     } else {
                         mCorrectAnswer++
                         answerView(question.corretAns, R.color.md_theme_dark_tertiary)
@@ -140,8 +155,9 @@ class QustionQuizGame : Fragment(), View.OnClickListener{
 
             }
 
-            }
         }
+    }
+
     private fun selectedOptionView(option: TextView, selectedPosition: Int) {
 
         defaultNewQuation()
@@ -152,32 +168,36 @@ class QustionQuizGame : Fragment(), View.OnClickListener{
 
         option.setTextColor(Color.parseColor("#363A43"))
         option.setTypeface(option.typeface, Typeface.BOLD)
-        option.background = context?.let { ContextCompat.getDrawable(it, R.color.md_theme_dark_tertiary)
+        option.background = context?.let {
+            ContextCompat.getDrawable(it, R.color.md_theme_dark_tertiary)
         }
 
     }
+
     private fun answerView(mSelectedPosition: Int, color: Int) {
-        when(mSelectedPosition){
-            1-> {
+        when (mSelectedPosition) {
+            1 -> {
                 binding.option1.background = context?.let {
                     ContextCompat.getDrawable(it, color)
                 }
             }
-            2->{  binding.option1.background = context?.let{
-                    ContextCompat.getDrawable(it,color)
+            2 -> {
+                binding.option1.background = context?.let {
+                    ContextCompat.getDrawable(it, color)
                 }
             }
 
-                3-> { binding.option1.background = context?.let{
-                    ContextCompat.getDrawable(it,color)
-                   }
+            3 -> {
+                binding.option1.background = context?.let {
+                    ContextCompat.getDrawable(it, color)
                 }
-
-             4-> {
-            binding.option1.background = context?.let{
-                ContextCompat.getDrawable(it,color)
             }
-        }
+
+            4 -> {
+                binding.option1.background = context?.let {
+                    ContextCompat.getDrawable(it, color)
+                }
+            }
 
 
         }
