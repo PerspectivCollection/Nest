@@ -1,5 +1,4 @@
 package com.example.nest.namequiz
-
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -14,6 +13,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.nest.R
 import com.example.nest.databinding.FragmentQustionQuizGameBinding
+import com.example.nest.model.Constanst
+import com.example.nest.model.Question
 
 
 class QustionQuizGame : Fragment(), View.OnClickListener{
@@ -83,34 +84,107 @@ class QustionQuizGame : Fragment(), View.OnClickListener{
 
 
         for (option in options) {
-
-
             option.setTextColor(Color.parseColor("#7A8089"))
-            //default appearance
             option.typeface = Typeface.DEFAULT
         }
 
 
     }
 
-    override fun onClick(v: View?) {
-        when(v?.id){
+    override fun onClick(V: View?) {
+        when(V?.id){
             R.id.option1->{
-                Toast.makeText(context, "clicked option 1", Toast.LENGTH_SHORT).show()
+             selectedOptionView(binding.option1,1)
 
             }
-            R.id.option2->{Toast.makeText(context, "clicked option 2", Toast.LENGTH_SHORT).show()
+            R.id.option2->{selectedOptionView(binding.option2,2)
 
             }
-            R.id.option3->{Toast.makeText(context, "clicked option 3", Toast.LENGTH_SHORT).show()
+            R.id.option3->{selectedOptionView(binding.option3,3)
 
             }
-            R.id.option4->{Toast.makeText(context, "clicked option 4", Toast.LENGTH_SHORT).show()
+            R.id.option4->{selectedOptionView(binding.option4,4)
 
             }
-            R.id.btnSubmit->{Toast.makeText(context, "clicked Submit", Toast.LENGTH_SHORT).show()
+            R.id.btnSubmit-> {
+                if (mSelectedPosition == 0) {
+                    mCurrrentPosition++
+                    when {
+                        mCurrrentPosition <= mQuestionsList.size -> {
+                            setQuestion()
+                        }
+                        else -> {
+
+                            Toast.makeText(context, "Finish !!", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                } else {
+
+                    val question = mQuestionsList[mCurrrentPosition - 1]
+
+                    if (question!!.corretAns != mSelectedPosition) {
+                        answerView(mCurrrentPosition, R.color.purple_200)
+                    } else {
+                        mCorrectAnswer++
+                        answerView(question.corretAns, R.color.purple_700)
+
+                        if (mCurrrentPosition == mQuestionsList.size) {
+                            binding.btnSubmit.text = "Finished"
+                        } else {
+                            binding.btnSubmit.text = "Next Question"
+                        }
+                    }
+
+                    mSelectedPosition = 0
+                }
+
+            }
 
             }
         }
+    private fun selectedOptionView(option: TextView, selectedPosition: Int) {
+
+        defaultNewQuation()
+
+        mSelectedPosition = selectedPosition
+
+
+
+        option.setTextColor(Color.parseColor("#363A43"))
+        option.setTypeface(option.typeface, Typeface.BOLD)
+        option.background = context?.let { ContextCompat.getDrawable(it, R.color.teal_200)
+        }
+
+    }
+    private fun answerView(mSelectedPosition: Int, color: Int) {
+        when(mSelectedPosition){
+            1-> {
+                binding.option1.background = context?.let {
+                    ContextCompat.getDrawable(it, color)
+                }
+            }
+            2->{  binding.option1.background = context?.let{
+                    ContextCompat.getDrawable(it,color)
+                }
+            }
+
+                3-> { binding.option1.background = context?.let{
+                    ContextCompat.getDrawable(it,color)
+                   }
+                }
+
+             4-> {
+            binding.option1.background = context?.let{
+                ContextCompat.getDrawable(it,color)
+            }
+        }
+
+
+        }
+
     }
 }
+
+
+
+

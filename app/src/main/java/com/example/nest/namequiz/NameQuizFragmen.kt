@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.nest.R
 import com.example.nest.databinding.FragmentNamequizBinding
+import com.example.nest.model.Question
 
 class NameQuizFragment : Fragment() {
     lateinit var binding: FragmentNamequizBinding

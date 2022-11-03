@@ -1,6 +1,7 @@
-package com.example.nest.namequiz
+package com.example.nest.model
 
 import com.example.nest.R
+import com.example.nest.model.Question
 
 object Constanst {
     fun getQuestion(): ArrayList<Question> {
@@ -8,7 +9,7 @@ object Constanst {
 
         val question1 = Question(
             1,
-            "Guess Who?",
+            "What is the name of the goose?",
             R.mipmap.northern_pintall,
             "American Wigeon",
             "Wood Duck",
@@ -20,7 +21,7 @@ object Constanst {
         val question2 = Question(
             2,
 
-            "Guess Who?",
+            "What is the name of the goose?",
             R.mipmap.american_wigeon,
             "American Wigeon",
             "Wood Duck",
@@ -31,7 +32,7 @@ object Constanst {
         questionList.add(question2)
         val question3 = Question(
             3,
-            "Guess Who?",
+            "What is the name of the goose?",
             R.mipmap.northern_pintall,
             "American Wigeon",
             "Wood Duck",
@@ -42,7 +43,7 @@ object Constanst {
         questionList.add(question3)
         val question4 = Question(
             4,
-            "Guess Who?",
+            "What is the name of the goose?",
             R.mipmap.mandarin_duck,
             "American Wigeon",
             "Wood Duck",
@@ -53,7 +54,7 @@ object Constanst {
         questionList.add(question4)
         val question5 = Question(
             5,
-            "Guess Who?",
+            "What is the name of the goose?",
             R.mipmap.wood_duck,
             "American Wigeon",
 
@@ -65,7 +66,7 @@ object Constanst {
         questionList.add(question5)
         val question6 = Question(
             6,
-            "Guess Who?",
+            "What is the name of the goose?",
             R.mipmap.mandarin_duck,
             "American Wigeon",
             "Wood Duck",
@@ -76,7 +77,7 @@ object Constanst {
         questionList.add(question6)
         val question7 = Question(
             7,
-            "Guess Who?",
+            "What is the name of the goose?",
             R.mipmap.mandarin_duck,
             "American Wigeon",
             "Wood Duck",
@@ -87,7 +88,7 @@ object Constanst {
         questionList.add(question7)
         val question8 = Question(
             1,
-            "Guess Who?",
+            "What is the name of the goose?",
             R.mipmap.northern_pintall,
             "American Wigeon",
             "Wood Duck",
@@ -98,7 +99,7 @@ object Constanst {
         questionList.add(question8)
         val question9 = Question(
             8,
-            "Guess Who?",
+            "What is the name of the goose?",
             R.mipmap.mandarin_duck,
             "Wood Duck", "Northern Pintall",
             "Mandarin Duck", "Mandarin Duck",4

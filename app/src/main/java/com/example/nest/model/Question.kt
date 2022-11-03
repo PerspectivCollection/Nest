@@ -1,4 +1,4 @@
-package com.example.nest.namequiz
+package com.example.nest.model
 
 import android.media.Image
 
