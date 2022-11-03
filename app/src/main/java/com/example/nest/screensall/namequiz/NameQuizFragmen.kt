@@ -1,4 +1,4 @@
-package com.example.nest.namequiz
+package com.example.nest.screensall.namequiz
 
 import android.os.Bundle
 import android.view.LayoutInflater

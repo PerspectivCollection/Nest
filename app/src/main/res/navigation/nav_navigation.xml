@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/nav_namequiz"
-        android:name="com.example.nest.namequiz.NameQuizFragment"
+        android:name="com.example.nest.screensall.namequiz.NameQuizFragment"
         android:label="@string/fragment_name_quizz" >
         <action
             android:id="@+id/action_nav_namequiz_to_qustionQuizGame"
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/qustionQuizGame"
-        android:name="com.example.nest.namequiz.QustionQuizGame"
+        android:name="com.example.nest.screensall.namequiz.QustionQuizGame"
         android:label="QustionQuizGame" />
 
 
