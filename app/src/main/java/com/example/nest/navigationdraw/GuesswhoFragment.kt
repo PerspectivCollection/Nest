@@ -1,8 +1,5 @@
 package com.example.nest.navigationdraw
 
-//model
-
-//app
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
