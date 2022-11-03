@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="scoorFragment"
+            type="com.example.nest.screensall.guesswho.ScoorFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.example.nest.navigationdraw.GuesswhoViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/factId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screensall.guesswho.ScoorFragment">
+
+        <!-- TODO: scoor -->
+
+        <TextView
+            android:id="@+id/birdtextId"
+            android:layout_width="235dp"
+            android:layout_height="48dp"
+            android:background="#00FF9800"
+            android:text="@string/show_bird"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="numbTry_of_numCorrect" />
+
+        <Button
+            android:id="@+id/btnNextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/to_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/birdtextId"
+            app:layout_constraintVertical_bias="0.434" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

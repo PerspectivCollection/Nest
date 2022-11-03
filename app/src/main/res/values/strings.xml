@@ -18,20 +18,19 @@
 
     //nav/fragment-guessWho
     <string name="fragment_guesswho">Guess Who</string>
-    <string name="birdShowStr">some argument</string>
-
+    <string name="guesswho_duck">Duck</string>
+    <string name="guesswho_goose">Goose</string>
 
     //nav/fragment-namequizz
-    <string name="fragment_name_quizz">Name Quizz</string>
+    <string name="fragment_name_quizz">Name Quiz</string>
 
     //nav/fragment-audioquizz
-    <string name="fragment_audio_quizz">Audio Quizz</string>
+    <string name="fragment_audio_quizz">Audio Quiz</string>
 
 
     //nav/fragment-gallery
     <string name="fragment_gallery">Gallery</string>
     <string name="hello_blank_fragment">some fact</string>
-
 
 
     //nav-fragment-nameQuiz
@@ -41,6 +40,11 @@
     //nav-fragment-gallery
 
     //nav-fragment-fact
-    <string name="show_bird">show bird</string>
+    <string name="show_bird">afdsfdasfd</string>
+    <string name="Factid">Fact</string>
+    <string name="audio_quiz">Audio Quiz</string>
+    <string name="to_menu">To Menu</string>
+    <string name="play_quiz">play quiz</string>
+    <string name="play">somer</string>
 
 </resources>

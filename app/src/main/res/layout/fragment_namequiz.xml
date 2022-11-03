@@ -1,140 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraint_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".navigationdraw.MainActivity">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
 
+    >
     <LinearLayout
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:background="#FFFFFF">
 
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name Quize"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.106" />
-
-    <ImageView
-        android:id="@+id/imagegoosId"
-        android:layout_width="299dp"
-        android:layout_height="262dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.23"
-        app:srcCompat="@mipmap/wood_duck" />
-
-
-    <LinearLayout
-        android:id="@+id/ll_progress_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="296dp"
-                android:layout_height="59dp"
-                app:layout_constraintBottom_toTopOf="@+id/imagegoosId"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                android:progress="0"/>
-
-        <TextView
-            android:id="@+id/tv_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:layout_width="373dp"
+            android:layout_height="323dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="TODO"
             android:gravity="center"
-            android:padding="15dp"
-            android:textColorHint="#7A8089"
-            android:textSize="14sp"
-            tools:text="0/10" />
+            android:minHeight="220dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/wood_duck"
+            tools:ignore="ImageContrastCheck">
 
-    </LinearLayout>
+        </ImageView>
+
         <TextView
-            android:id="@+id/option_one"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="#4C5FBC"
-            android:gravity="center"
-            android:padding="15dp"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            tools:text="American Wigeon" />
-
-        <TextView
-            android:id="@+id/option_two"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="#4C5FBC"
-            android:gravity="center"
-            android:padding="15dp"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            tools:text="Mandarin Duck" />
-
-        <TextView
-            android:id="@+id/tv_option_three"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="#4C5FBC"
-            android:gravity="center"
-            android:padding="15dp"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            tools:text="Northern Pintall" />
-
-        <TextView
-            android:id="@+id/option_four"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="#4C5FBC"
-            android:gravity="center"
-            android:padding="15dp"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            tools:text="Wood duck" />
+            android:layout_height="0dp"
+            android:textColor="@color/cardview_shadow_end_color"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="11sp"
+            android:text="@string/play_quiz"
+            android:layout_weight="1"
+            />
 
         <Button
-            android:id="@+id/submit_btn"
-            android:layout_width="match_parent"
+            android:id="@+id/btn_play"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@color/purple_500"
-            android:text="SUBMIT"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="18dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
 
-</ScrollView>
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="#F5F3F0F0"
+            android:shadowColor="#C9A776"
+            android:background="#50B654"
+            android:layout_gravity="center_horizontal|bottom"
+            android:text="@string/play">
+
+
+        </Button>
+
+    </LinearLayout>
+</layout>

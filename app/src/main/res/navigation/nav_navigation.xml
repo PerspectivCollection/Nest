@@ -12,27 +12,126 @@
         android:name="com.example.nest.navigationdraw.GuesswhoFragment"
         android:label="@string/fragment_guesswho"
         tools:layout="@layout/fragment_namequiz">
+
+        <argument
+            android:name="removeIndexFalse"
+            android:defaultValue="false"
+            app:argType="boolean" />
         <action
-            android:id="@+id/action_nav_guesswho_to_factFragment2"
-            app:destination="@id/factFragment2" />
+            android:id="@+id/action_nav_guesswho_to_guessWhoStartFragment"
+            app:destination="@id/guessWhoStartFragment" />
+
     </fragment>
 
     <fragment
         android:id="@+id/nav_namequiz"
-        android:name="com.example.nest.navigationdraw.NameQuizFragment"
-        android:label="@string/fragment_name_quizz" />
+        android:name="com.example.nest.screensall.namequiz.NameQuizFragment"
+        android:label="@string/fragment_name_quizz">
+        <action
+            android:id="@+id/action_nav_namequiz_to_qustionQuizGame"
+            app:destination="@id/qustionQuizGame" />
+    </fragment>
+    <fragment
+        android:id="@+id/qustionQuizGame"
+        android:name="com.example.nest.screensall.namequiz.QustionQuizGame"
+        android:label="QustionQuizGame" >
+        <action
+            android:id="@+id/action_qustionQuizGame_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.nest.navigationdraw.GalleryFragment"
         android:label="@string/menu_gallery_ui"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery">
+        <action
+            android:id="@+id/action_movieListFragment_to_movieDetailFragment"
+            app:destination="@id/BirdUnlockFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/factFragment2"
-        android:name="com.example.nest.screensAll.FactFragment"
+        android:id="@+id/BirdUnlockFragment"
+        android:name="com.example.nest.screensall.gallery.BirdUnlockFragment"
+        android:label="fragment_bird_unlock"
+        tools:layout="@layout/fragment_bird_unlock">
+        <argument
+            android:name="id"
+            android:defaultValue="1"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fact_Fragment"
+        android:name="com.example.nest.screensall.guesswho.FactFragment"
         android:label="fragment_fact"
-        tools:layout="@layout/fragment_fact"/>
+        tools:layout="@layout/fragment_fact">
 
+        <argument
+            android:name="audioIndexBird"
+            android:defaultValue="0"
+            app:argType="string" />
+        <argument
+            android:name="typeBird"
+            android:defaultValue="false"
+            app:argType="boolean" />
 
+        <action
+            android:id="@+id/action_fact_Fragment_to_scoorFragment"
+            app:destination="@id/scoorFragment" />
+        <action
+            android:id="@+id/action_fact_Fragment_to_guessWhoStartFragment"
+            app:destination="@id/guessWhoStartFragment" />
+        <action
+            android:id="@+id/action_fact_Fragment_to_audioGuessFragment2"
+            app:destination="@id/audioGuessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoorFragment"
+        android:name="com.example.nest.screensall.guesswho.ScoorFragment"
+        android:label="fragment_scoor"
+        tools:layout="@layout/fragment_scoor">
+        <action
+            android:id="@+id/action_scoorFragment_to_nav_guesswho"
+            app:destination="@id/nav_guesswho" />
+        <action
+            android:id="@+id/action_scoorFragment_to_nav_audioquiz"
+            app:destination="@id/nav_audioquiz" />
+    </fragment>
+    <fragment
+        android:id="@+id/guessWhoStartFragment"
+        android:name="com.example.nest.screensall.guesswho.GuesswhoStartFragment"
+        android:label="fragment_guess_who_start"
+        tools:layout="@layout/fragment_guess_who_start">
+        <action
+            android:id="@+id/action_guessWhoStartFragment_to_fact_Fragment"
+            app:destination="@id/fact_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_audioquiz"
+        android:name="com.example.nest.navigationdraw.AudioquizFragment"
+        android:label="@string/fragment_audio_quizz"
+        tools:layout="@layout/fragment_audioquiz">
+        <action
+            android:id="@+id/action_nav_audioquiz_to_audioGuessFragment"
+            app:destination="@id/audioGuessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/audioGuessFragment"
+        android:name="com.example.nest.screensall.audioquiz.AudioGuessFragment"
+        android:label="fragment_audio_guess"
+        tools:layout="@layout/fragment_audio_guess">
+        <action
+            android:id="@+id/action_audioGuessFragment_to_fact_Fragment2"
+            app:destination="@id/fact_Fragment" />
+        <argument
+            android:name="audiobirdindex"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.nest.screensall.namequiz.ResultFragment"
+        android:label="ResultFragment" />
 </navigation>

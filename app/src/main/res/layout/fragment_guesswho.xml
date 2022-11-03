@@ -6,82 +6,36 @@
 
     <data>
         <variable
-            name="SendBird"
+            name="guesswhoFragment"
+            type="com.example.nest.navigationdraw.GuesswhoFragment" />
+
+        <variable
+            name="viewModel"
             type="com.example.nest.navigationdraw.GuesswhoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/progressBar2"
+        android:id="@+id/guesswhostartid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".navigationdraw.MainActivity">
+        tools:context="navigationdraw.GuesswhoFragment">
 
-        <TextView
-            android:id="@+id/textView"
+        <!-- TODO: guesswho -->
+
+
+        <Button
+            android:id="@+id/btnStartId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fragment_guesswho"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="Start"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.106" />
+            app:layout_constraintVertical_bias="0.806"
+            tools:ignore="UnknownIdInLayout" />
 
-        <Button
-            android:id="@+id/btnOption1id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.247"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imagegoosId"
-            app:layout_constraintVertical_bias="0.317" />
-
-        <Button
-            android:id="@+id/btnOption2id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.445"
-            app:layout_constraintStart_toEndOf="@+id/btnOption1id"
-            app:layout_constraintTop_toBottomOf="@+id/imagegoosId"
-            app:layout_constraintVertical_bias="0.317" />
-
-        <ImageView
-            android:id="@+id/imagegoosId"
-            android:layout_width="299dp"
-            android:layout_height="262dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.23"
-            app:srcCompat="@mipmap/wood_duck" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="296dp"
-            android:layout_height="59dp"
-            android:progress="0"
-            app:layout_constraintBottom_toTopOf="@+id/imagegoosId"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOption1id" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

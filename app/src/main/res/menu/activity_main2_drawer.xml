@@ -4,17 +4,21 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-<!--        guess who-->
+        <!--        guess who-->
         <item
             android:id="@+id/nav_guesswho"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_guess_who" />
 
-<!--        todo: change to namequiz  refactor-->
+        <!--        todo: change to namequiz  refactor-->
         <item
             android:id="@+id/nav_namequiz"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_name_quiz" />
+        <item
+            android:id="@+id/nav_audioquiz"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/audio_quiz" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"

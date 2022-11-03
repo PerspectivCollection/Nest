@@ -28,21 +28,19 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
+        val mainNavView: NavigationView = binding.navView
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container_main) as NavHostFragment
         val navController = navHostFragment.navController
 
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_guesswho, R.id.nav_gallery, R.id.nav_namequiz
+                R.id.nav_guesswho, R.id.nav_gallery, R.id.nav_namequiz, R.id.nav_audioquiz
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        mainNavView.setupWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {
