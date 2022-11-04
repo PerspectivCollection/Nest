@@ -14,6 +14,7 @@ import com.example.nest.R
 import com.example.nest.databinding.FragmentAudioGuessBinding
 import com.example.nest.model.Bird
 import com.example.nest.navigationdraw.AudioquizViewModel
+import com.example.nest.screensall.audioquiz.AudioGuessFragmentDirections
 import com.example.nest.screensall.guesswho.FactFragmentArgs
 
 class AudioGuessFragment : Fragment() {
