@@ -18,9 +18,18 @@
             android:defaultValue="false"
             app:argType="boolean" />
         <action
+<<<<<<< HEAD
             android:id="@+id/action_nav_guesswho_to_guessWhoStartFragment"
             app:destination="@id/guessWhoStartFragment" />
 
+=======
+            android:id="@+id/action_nav_guesswho_to_fact_Fragment"
+            app:destination="@id/fact_Fragment" />
+        <argument
+            android:name="indexBird"
+            app:argType="integer"
+            android:defaultValue="0"/>
+>>>>>>> b1fb6b5 (fix: guess who new bird)
     </fragment>
 
     <fragment

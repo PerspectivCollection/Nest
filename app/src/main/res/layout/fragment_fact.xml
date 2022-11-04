@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+<<<<<<< HEAD
 
         <variable
             name="factfragment"
@@ -12,12 +13,18 @@
         <variable
             name="viewModel"
             type="com.example.nest.navigationdraw.GuesswhoViewModel" />
+=======
+        <variable
+            name="updateBird"
+            type="com.example.nest.screensAll.guesswho.FactViewModel" />
+>>>>>>> b1fb6b5 (fix: guess who new bird)
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/factId"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+<<<<<<< HEAD
         tools:context=".screensall.guesswho.FactFragment">
 
         <!-- TODO: fact -->
@@ -37,6 +44,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.603" />
+=======
+        tools:context=".screensAll.guesswho.FactViewModel">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <TextView
+            android:id="@+id/birdtextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show_bird"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.387" />
+>>>>>>> b1fb6b5 (fix: guess who new bird)
 
         <Button
             android:id="@+id/btnShowFactId"
@@ -45,22 +68,38 @@
             android:text="@string/Factid"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnNextId"
+<<<<<<< HEAD
             app:layout_constraintHorizontal_bias="0.52"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/birdtextId"
             app:layout_constraintVertical_bias="0.399" />
+=======
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/birdtextId"
+            app:layout_constraintVertical_bias="0.521" />
+>>>>>>> b1fb6b5 (fix: guess who new bird)
 
         <Button
             android:id="@+id/btnNextId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_marginEnd="68dp"
+=======
+            android:layout_marginEnd="64dp"
+
+>>>>>>> b1fb6b5 (fix: guess who new bird)
             android:text="next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/birdtextId"
+<<<<<<< HEAD
             app:layout_constraintVertical_bias="0.399" />
 
+=======
+            app:layout_constraintVertical_bias="0.521" />
+>>>>>>> b1fb6b5 (fix: guess who new bird)
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
