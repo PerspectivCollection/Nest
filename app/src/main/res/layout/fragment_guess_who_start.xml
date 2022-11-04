@@ -46,7 +46,7 @@
             app:layout_constraintHorizontal_bias="0.309"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imagegoosId"
-            app:layout_constraintVertical_bias="0.356" />
+            app:layout_constraintVertical_bias="0.241" />
 
         <Button
             android:id="@+id/btnOption2id"
@@ -58,7 +58,7 @@
             app:layout_constraintHorizontal_bias="0.238"
             app:layout_constraintStart_toEndOf="@+id/btnOption1id"
             app:layout_constraintTop_toBottomOf="@+id/imagegoosId"
-            app:layout_constraintVertical_bias="0.356" />
+            app:layout_constraintVertical_bias="0.241" />
 
         <ImageView
             android:id="@+id/imagegoosId"
@@ -69,8 +69,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.23" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -80,8 +79,10 @@
             android:progress="@{viewModel.progressguess}"
             app:layout_constraintBottom_toTopOf="@+id/imagegoosId"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.224" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
