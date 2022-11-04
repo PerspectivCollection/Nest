@@ -42,6 +42,7 @@
     //nav-fragment-fact
     <string name="show_bird">afdsfdasfd</string>
     <string name="Factid">Fact</string>
+    <string name="scooretxt">Scoore</string>
     <string name="audio_quiz">Audio Quiz</string>
     <string name="to_menu">To Menu</string>
     <string name="play_quiz">play quiz</string>

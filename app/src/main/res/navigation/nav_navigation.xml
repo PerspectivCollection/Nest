@@ -65,7 +65,7 @@
     <fragment
         android:id="@+id/fact_Fragment"
         android:name="com.example.nest.screensall.guesswho.FactFragment"
-        android:label="fragment_fact"
+        android:label="@string/Factid"
         tools:layout="@layout/fragment_fact">
 
         <argument
@@ -90,7 +90,7 @@
     <fragment
         android:id="@+id/scoorFragment"
         android:name="com.example.nest.screensall.guesswho.ScoorFragment"
-        android:label="fragment_scoor"
+        android:label="@string/scooretxt"
         tools:layout="@layout/fragment_scoor">
         <action
             android:id="@+id/action_scoorFragment_to_nav_guesswho"
@@ -102,7 +102,7 @@
     <fragment
         android:id="@+id/guessWhoStartFragment"
         android:name="com.example.nest.screensall.guesswho.GuesswhoStartFragment"
-        android:label="fragment_guess_who_start"
+        android:label="@string/fragment_guesswho"
         tools:layout="@layout/fragment_guess_who_start">
         <action
             android:id="@+id/action_guessWhoStartFragment_to_fact_Fragment"
@@ -120,7 +120,7 @@
     <fragment
         android:id="@+id/audioGuessFragment"
         android:name="com.example.nest.screensall.audioquiz.AudioGuessFragment"
-        android:label="fragment_audio_guess"
+        android:label="Guess sound"
         tools:layout="@layout/fragment_audio_guess">
         <action
             android:id="@+id/action_audioGuessFragment_to_fact_Fragment2"
@@ -133,5 +133,5 @@
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.example.nest.screensall.namequiz.ResultFragment"
-        android:label="ResultFragment" />
+        android:label="Result Fragment" />
 </navigation>
