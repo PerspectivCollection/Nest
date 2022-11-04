@@ -28,8 +28,6 @@ class GuesswhoStartFragment : Fragment() {
         binding.viewModel = sharedViewModel //dot now what dey dom now
         binding.lifecycleOwner = this //dot now what dey dom now
 
-
-//todo work adding to index
         if (sharedViewModel.birdindex.value == null)
             sharedViewModel.setGuessBird((0..33).random())
 
@@ -48,7 +46,7 @@ class GuesswhoStartFragment : Fragment() {
             if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird()[it1].typeBird.toString() } == "Duck") {
                 sharedViewModel.rigthGuess()
             }
-            navigateNext() //todo put this in a if
+            navigateNext()
         }
 
         binding.btnOption2id.setOnClickListener() {

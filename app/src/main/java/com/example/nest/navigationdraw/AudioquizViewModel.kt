@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class AudioquizViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
     private val _birdindex = MutableLiveData<Int>()
     val birdindex: LiveData<Int>
         get() = _birdindex

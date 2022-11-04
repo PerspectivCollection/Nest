@@ -12,6 +12,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.nest.R
+import com.example.nest.model.Bird
 import com.example.nest.databinding.FragmentFactBinding
 import com.example.nest.navigationdraw.GuesswhoViewModel
 
@@ -32,8 +33,16 @@ class FactFragment : Fragment() {
         binding.viewModel = sharedViewModel
         binding.lifecycleOwner = this
 
+
+
+
         //no navigate to audio or guess
         binding.btnNextId2.visibility = View.GONE
+
+        if (sharedViewModel.birdindex.value != 0){
+//            binding.birdtextId.text = Bird.getBird()[sharedViewModel.birdindex.value].name.toString()
+        }
+//        Toast.makeText(context, " audio ${Bird.getBird().get(sharedViewModel.storeList.last()).name}", Toast.LENGTH_LONG).show()
 
         //correct or wrong green or red
         if ((sharedViewModel.typebird.value == true) or args.typeBird) {
@@ -77,16 +86,14 @@ class FactFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+//        val some = sharedViewModel.birdindex.value
+
         sharedViewModel.setGuessBird(args.audioIndexBird.toInt())
 
-        //typebird
-//        if (args.typeBird) {
-//            sharedViewModel.typebird.value = args.typeBird
-//            Toast.makeText(context, "from audio ${args.typeBird}", Toast.LENGTH_LONG).show()
-//        }
 
         //to audio btn
         if (args.navigateReapeat) {
+            binding.birdtextId.text = Bird.getBird()[args.audioIndexBird.toInt()].name.toString()
             binding.btnNextId2.visibility = View.VISIBLE
         }
 
@@ -95,6 +102,9 @@ class FactFragment : Fragment() {
             viewModel = sharedViewModel
             factfragment = this@FactFragment
         }
+
+
+
     }
 
     fun navigateNext() {

@@ -47,9 +47,6 @@ class AudioGuessFragment : Fragment() {
         sharedViewModel.storeAudiGuess((1..34).random())
         sharedViewModel.resetGuess()
 
-        Toast.makeText(context, " audio ${sharedViewModel.storeList.toString()}", Toast.LENGTH_LONG)
-            .show()
-
         birdMediaPlayer = sharedViewModel.storeList.last().toInt()?.let {
             Bird.getBird().get(it).audio?.let {
                 MediaPlayer.create(
