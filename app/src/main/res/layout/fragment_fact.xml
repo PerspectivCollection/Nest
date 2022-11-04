@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-<<<<<<< HEAD
-
         <variable
             name="factfragment"
             type="com.example.nest.screensall.guesswho.FactFragment" />
@@ -13,39 +11,15 @@
         <variable
             name="viewModel"
             type="com.example.nest.navigationdraw.GuesswhoViewModel" />
-=======
-        <variable
-            name="updateBird"
-            type="com.example.nest.screensAll.guesswho.FactViewModel" />
->>>>>>> b1fb6b5 (fix: guess who new bird)
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/factId"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-<<<<<<< HEAD
         tools:context=".screensall.guesswho.FactFragment">
 
         <!-- TODO: fact -->
-
-        <TextView
-            android:id="@+id/birdtextId"
-            android:layout_width="235dp"
-            android:layout_height="48dp"
-            android:background="#FF9800"
-
-            android:text="somevalue"
-            android:textAlignment="center"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.568"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.603" />
-=======
-        tools:context=".screensAll.guesswho.FactViewModel">
 
         <!-- TODO: Update blank fragment layout -->
 
@@ -56,46 +30,56 @@
             android:text="@string/show_bird"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.387" />
->>>>>>> b1fb6b5 (fix: guess who new bird)
+            app:layout_constraintVertical_bias="0.671" />
 
         <Button
             android:id="@+id/btnShowFactId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
             android:text="@string/Factid"
+
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnNextId"
-<<<<<<< HEAD
-            app:layout_constraintHorizontal_bias="0.52"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/birdtextId"
-            app:layout_constraintVertical_bias="0.399" />
-=======
-            app:layout_constraintHorizontal_bias="0.508"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/birdtextId"
-            app:layout_constraintVertical_bias="0.521" />
->>>>>>> b1fb6b5 (fix: guess who new bird)
+            app:layout_constraintVertical_bias="0.215" />
 
         <Button
             android:id="@+id/btnNextId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
-            android:layout_marginEnd="68dp"
-=======
-            android:layout_marginEnd="64dp"
-
->>>>>>> b1fb6b5 (fix: guess who new bird)
-            android:text="next"
+            android:layout_marginEnd="80dp"
+            android:text="Next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.766"
+            app:layout_constraintStart_toEndOf="@+id/btnShowFactId"
             app:layout_constraintTop_toBottomOf="@+id/birdtextId"
-<<<<<<< HEAD
-            app:layout_constraintVertical_bias="0.399" />
+            app:layout_constraintVertical_bias="0.215" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="560dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="144dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="263dp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cardViewid"
@@ -119,9 +103,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-=======
-            app:layout_constraintVertical_bias="0.521" />
->>>>>>> b1fb6b5 (fix: guess who new bird)
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

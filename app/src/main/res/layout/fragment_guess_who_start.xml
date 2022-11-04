@@ -43,10 +43,10 @@
             android:text="@string/guesswho_duck"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.247"
+            app:layout_constraintHorizontal_bias="0.309"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imagegoosId"
-            app:layout_constraintVertical_bias="0.317" />
+            app:layout_constraintVertical_bias="0.356" />
 
         <Button
             android:id="@+id/btnOption2id"
@@ -55,10 +55,10 @@
             android:text="@string/guesswho_goose"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.445"
+            app:layout_constraintHorizontal_bias="0.238"
             app:layout_constraintStart_toEndOf="@+id/btnOption1id"
             app:layout_constraintTop_toBottomOf="@+id/imagegoosId"
-            app:layout_constraintVertical_bias="0.317" />
+            app:layout_constraintVertical_bias="0.356" />
 
         <ImageView
             android:id="@+id/imagegoosId"
@@ -82,6 +82,27 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="144dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="263dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="561dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

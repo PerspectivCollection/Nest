@@ -21,6 +21,10 @@
             android:id="@+id/action_nav_guesswho_to_guessWhoStartFragment"
             app:destination="@id/guessWhoStartFragment" />
 
+        <argument
+            android:name="indexBird"
+            app:argType="integer"
+            android:defaultValue="0"/>
     </fragment>
 
     <fragment
