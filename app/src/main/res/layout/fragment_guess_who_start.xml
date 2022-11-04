@@ -79,10 +79,10 @@
             android:progress="@{viewModel.progressguess}"
             app:layout_constraintBottom_toTopOf="@+id/imagegoosId"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintHorizontal_bias="0.513"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.224" />
+            app:layout_constraintVertical_bias="0.914" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
