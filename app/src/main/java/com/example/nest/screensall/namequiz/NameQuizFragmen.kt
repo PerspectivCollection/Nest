@@ -1,5 +1,6 @@
 package com.example.nest.screensall.namequiz
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.nest.R
 import com.example.nest.databinding.FragmentNamequizBinding
 import com.example.nest.model.Question
@@ -27,7 +29,10 @@ class NameQuizFragment : Fragment() {
         binding.btnPlay.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_nav_namequiz_to_qustionQuizGame)
 
+
         }
+
+
 
         return binding.root
 

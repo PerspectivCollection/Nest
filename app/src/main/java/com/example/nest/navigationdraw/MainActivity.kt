@@ -1,6 +1,9 @@
 package com.example.nest.navigationdraw
 
+import android.net.Uri
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -46,5 +49,8 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_container_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+
+
     }
+
 }
