@@ -15,6 +15,7 @@ import com.example.nest.R
 import com.example.nest.databinding.FragmentFactBinding
 import com.example.nest.navigationdraw.GuesswhoViewModel
 
+
 class FactFragment : Fragment() {
     private val args: FactFragmentArgs by navArgs()
 
@@ -31,21 +32,17 @@ class FactFragment : Fragment() {
         binding.viewModel = sharedViewModel
         binding.lifecycleOwner = this
 
-        val somInt = sharedViewModel.birdindex.value?.toInt()
-        Toast.makeText(context, "${somInt}", Toast.LENGTH_LONG).show()
+        //no navigate to audio or guess
+        binding.btnNextId2.visibility = View.GONE
 
-//        binding.birdtextId.text = "${Bird.getBird().get(sharedViewModel.birdindex.value?.toInt()).name}"
-//        binding.birdtextId.text = "${sharedViewModel.birdindex.value?.toInt()}"
-
-
-        //todo corect or wrong green or red
-        if (sharedViewModel.typebird.value == true) {
+        //correct or wrong green or red
+        if ((sharedViewModel.typebird.value == true) or args.typeBird) {
             binding.birdtextId.setBackgroundColor(Color.GREEN)
-            //todo add text
         } else {
             binding.birdtextId.setBackgroundColor(Color.RED)
         }
 
+        //to guesswho
         binding.btnNextId.setOnClickListener() {
             val process = sharedViewModel.progressguess.value?.toInt()!!
 
@@ -58,9 +55,19 @@ class FactFragment : Fragment() {
                 findNavController().navigate(R.id.action_fact_Fragment_to_guessWhoStartFragment)
             }
         }
-//todo later display a fact card
+        //to audio
+        binding.btnNextId2.setOnClickListener() {
+            if (sharedViewModel.storeList.size == 5) {
+                navigateScoore()
+            } else {
+                sharedViewModel.resetGuess()
+                sharedViewModel.updateIndexGuess()
+                navigateNext()
+            }
+        }
+
+        //show fact card
         binding.btnShowFactId.setOnClickListener() {
-//            navigateNext()
             showFact()
         }
 
@@ -71,8 +78,17 @@ class FactFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         sharedViewModel.setGuessBird(args.audioIndexBird.toInt())
-        Toast.makeText(context, "${sharedViewModel.storeList.toString()}", Toast.LENGTH_LONG).show()
 
+        //typebird
+//        if (args.typeBird) {
+//            sharedViewModel.typebird.value = args.typeBird
+//            Toast.makeText(context, "from audio ${args.typeBird}", Toast.LENGTH_LONG).show()
+//        }
+
+        //to audio btn
+        if (args.navigateReapeat) {
+            binding.btnNextId2.visibility = View.VISIBLE
+        }
 
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
@@ -81,25 +97,15 @@ class FactFragment : Fragment() {
         }
     }
 
-    // todo repite sycle
     fun navigateNext() {
-//
-//        if (sharedViewModel.storeList.size == 5){
-//            findNavController().navigate(R.id.action_fact_Fragment_to_scoorFragment)
-//        }
         val action = FactFragmentDirections.actionFactFragmentToAudioGuessFragment2()
-
-//        action.audiobirdindex = sharedViewModel.birdindex.value?.toInt()!!
         findNavController().navigate(action)
-
     }
 
-    //todo not jet implementet
     fun navigateScoore() {
         findNavController().navigate(R.id.action_fact_Fragment_to_scoorFragment)
     }
 
-    //todo not jet implementet
     fun showFact() {
         binding.cardViewid.visibility = View.VISIBLE
     }

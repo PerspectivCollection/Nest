@@ -30,7 +30,7 @@ class GuesswhoViewModel : ViewModel() {
 
     //adds elment to end of list
     fun updateIndexGuess() {
-        var store = (0..54).random() //there is 1 , rmember to have -1 less then the list length
+        var store = (0..33).random() //there is 1 , rmember to have -1 less then the list length
         _birdindex.value = store
         storeList.add(store)
     }
@@ -49,11 +49,11 @@ class GuesswhoViewModel : ViewModel() {
     }
 
     fun rigthGuess(){
-        _typebird.value = true  // todo fix this
+        _typebird.value = true
     }
 
     fun resetGuess(){
-        _typebird.value = false  // todo fix this
+        _typebird.value = false
     }
 
 }

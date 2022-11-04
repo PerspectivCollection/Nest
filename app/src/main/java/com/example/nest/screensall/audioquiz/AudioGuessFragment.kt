@@ -36,12 +36,16 @@ class AudioGuessFragment : Fragment() {
         Toast.makeText(context, "${sharedViewModel.birdindex.value?.toInt()}", Toast.LENGTH_LONG)
             .show()
 
+        if(sharedViewModel.storeList.size >= 6){
+            sharedViewModel.resetProgress()
+        }
+
         _binding = FragmentAudioGuessBinding.inflate(inflater, container, false)
         binding.viewModel = sharedViewModel //dot now what dey dom now
         binding.lifecycleOwner = this //dot now what dey dom now
 
-        //todo work fine but make it random
         sharedViewModel.storeAudiGuess((1..34).random())
+        sharedViewModel.resetGuess()
 
         Toast.makeText(context, " audio ${sharedViewModel.storeList.toString()}", Toast.LENGTH_LONG)
             .show()
@@ -63,22 +67,25 @@ class AudioGuessFragment : Fragment() {
         if (sharedViewModel.progressguess.value == null)
             sharedViewModel.progreebarstart(0)
 
-        sharedViewModel.progreebar((sharedViewModel.storeList.size * 20))
-
         binding.btnOption1id.setOnClickListener()
         {
-            val action = AudioGuessFragmentDirections.actionAudioGuessFragmentToFactFragment2()
+            sharedViewModel.progreebarstart(sharedViewModel.storeList.size * 20)
 
-            action.audioIndexBird = sharedViewModel.storeList.last().toString()
+            if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird()[it1].typeBird.toString() } == "Duck") {
+                sharedViewModel.rigthGuess()
+            }
 
-            findNavController().navigate(action)
+            navigateNext()
         }
 
         binding.btnOption2id.setOnClickListener()
         {
+            sharedViewModel.progreebarstart(sharedViewModel.storeList.size * 20)
+
             if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird()[it1].typeBird.toString() } == "Goose") {
                 sharedViewModel.rigthGuess()
             }
+
             navigateNext()
         }
         return binding.root
@@ -94,11 +101,17 @@ class AudioGuessFragment : Fragment() {
         }
 
         sharedViewModel.setGuessBird(args.audioIndexBird.toInt())
+
     }
 
-    //todo navigate to fact with a argument
+    //navigate to fact with a argument index, true/false, true
     fun navigateNext() {
-        findNavController().navigate(R.id.action_guessWhoStartFragment_to_fact_Fragment)
+        val action = AudioGuessFragmentDirections.actionAudioGuessFragmentToFactFragment2()
+        action.audioIndexBird = sharedViewModel.storeList.last().toString()
+        action.typeBird = sharedViewModel.typebird.value == true
+        action.navigateReapeat = true
+
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {
