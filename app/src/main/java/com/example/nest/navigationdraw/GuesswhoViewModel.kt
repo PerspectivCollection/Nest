@@ -30,7 +30,7 @@ class GuesswhoViewModel : ViewModel() {
 
     //adds elment to end of list
     fun updateIndexGuess() {
-        var store = (0..99).random() //todo set 4 to round 20 , rmember to have -1 less then the list length
+        var store = (0..54).random() //there is 1 , rmember to have -1 less then the list length
         _birdindex.value = store
         storeList.add(store)
     }
