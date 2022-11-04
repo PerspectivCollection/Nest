@@ -28,8 +28,10 @@ class GuesswhoStartFragment : Fragment() {
         binding.viewModel = sharedViewModel //dot now what dey dom now
         binding.lifecycleOwner = this //dot now what dey dom now
 
-        if (sharedViewModel.birdindex.value == null)
-            sharedViewModel.setGuessBird((0..33).random())
+//        if (sharedViewModel.birdindex.value == null)
+//            sharedViewModel.setGuessBird((0..33).random())
+
+        sharedViewModel.updateIndexGuess()
 
         sharedViewModel.birdindex.value?.toInt()?.let { it ->
             Bird.getBird()[it].image.let {

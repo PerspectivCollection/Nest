@@ -34,15 +34,12 @@ class FactFragment : Fragment() {
         binding.lifecycleOwner = this
 
 
-
-
         //no navigate to audio or guess
         binding.btnNextId2.visibility = View.GONE
 
         if (sharedViewModel.birdindex.value != 0){
-//            binding.birdtextId.text = Bird.getBird()[sharedViewModel.birdindex.value].name.toString()
+            binding.birdtextId.text = sharedViewModel.storeList.last().toString()
         }
-//        Toast.makeText(context, " audio ${Bird.getBird().get(sharedViewModel.storeList.last()).name}", Toast.LENGTH_LONG).show()
 
         //correct or wrong green or red
         if ((sharedViewModel.typebird.value == true) or args.typeBird) {
