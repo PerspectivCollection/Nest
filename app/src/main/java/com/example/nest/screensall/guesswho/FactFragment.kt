@@ -92,8 +92,6 @@ class FactFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val some = sharedViewModel.birdindex.value
-
         sharedViewModel.setGuessBird(args.audioIndexBird.toInt())
 
 
@@ -108,8 +106,6 @@ class FactFragment : Fragment() {
             viewModel = sharedViewModel
             factfragment = this@FactFragment
         }
-
-
 
     }
 

@@ -33,8 +33,6 @@ class AudioGuessFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        Toast.makeText(context, "${sharedViewModel.birdindex.value?.toInt()}", Toast.LENGTH_LONG)
-            .show()
 
         if(sharedViewModel.storeList.size >= 6){
             sharedViewModel.resetProgress()
