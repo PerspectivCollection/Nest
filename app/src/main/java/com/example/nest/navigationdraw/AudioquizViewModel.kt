@@ -42,11 +42,11 @@ class AudioquizViewModel : ViewModel() {
     }
 
     fun rigthGuess(){
-        _typebird.value = true  // todo fix this
+        _typebird.value = true
     }
 
     fun resetGuess(){
-        _typebird.value = false  // todo fix this
+        _typebird.value = false
     }
 
     fun storeAudiGuess(num : Int){

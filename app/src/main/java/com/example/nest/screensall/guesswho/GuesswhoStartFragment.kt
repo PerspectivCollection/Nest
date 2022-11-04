@@ -22,14 +22,9 @@ class GuesswhoStartFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-//        Toast.makeText(context, "${sharedViewModel.storeList.toString()}", Toast.LENGTH_LONG).show()
-
         _binding = FragmentGuessWhoStartBinding.inflate(inflater, container, false)
         binding.viewModel = sharedViewModel //dot now what dey dom now
         binding.lifecycleOwner = this //dot now what dey dom now
-
-//        if (sharedViewModel.birdindex.value == null)
-//            sharedViewModel.setGuessBird((0..33).random())
 
         sharedViewModel.updateIndexGuess()
 

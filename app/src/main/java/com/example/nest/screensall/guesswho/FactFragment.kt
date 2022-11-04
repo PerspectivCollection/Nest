@@ -37,8 +37,17 @@ class FactFragment : Fragment() {
         //no navigate to audio or guess
         binding.btnNextId2.visibility = View.GONE
 
+        sharedViewModel.birdindex.value?.toInt()?.let { it ->
+            Bird.getBird()[it].image.let {
+                if (it != null) {
+                    binding.imageCardView3.setImageResource(it)
+                }
+            }
+        }
+
+        //new bird evry entering fragment
         if (sharedViewModel.birdindex.value != 0){
-            binding.birdtextId.text = sharedViewModel.storeList.last().toString()
+            binding.birdtextId.text = Bird.getBird()[sharedViewModel.storeList.last().toInt()].name.toString()
         }
 
         //correct or wrong green or red

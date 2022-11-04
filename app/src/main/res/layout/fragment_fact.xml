@@ -25,7 +25,7 @@
             android:id="@+id/birdtextId"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="@string/show_bird"
+
             android:textAlignment="center"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="80dp"
-            android:text="Next"
+            android:text="@string/next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.766"
@@ -97,38 +97,36 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cardViewid"
             android:layout_width="300dp"
-            android:layout_height="350dp"
+            android:layout_height="450dp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.385"
+            app:layout_constraintVertical_bias="0.251"
             tools:ignore="MissingConstraints">
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
+                android:layout_marginBottom="84dp"
                 android:text="description"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.241" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
                 android:id="@+id/imageCardView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/textView2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2"
-                app:layout_constraintVertical_bias="0.435"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.227"
                 app:srcCompat="@mipmap/american_wigeon" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
