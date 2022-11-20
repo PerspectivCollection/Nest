@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.nest.R
 import com.example.nest.databinding.FragmentBirdUnlockBinding
 import com.example.nest.model.Bird
@@ -16,6 +17,7 @@ class BirdUnlockFragment : Fragment() {
     private val args: BirdUnlockFragmentArgs by navArgs()
 
     private var fragmentBinding: FragmentBirdUnlockBinding? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +34,7 @@ class BirdUnlockFragment : Fragment() {
 
 
         // Gets the movie with the uid (just a number in the list in this case)
-        val movie = GalleryStorage.getGalery()[args.id]
+//        val movie = GalleryStorage.getGalery()[args.id]
 
         // Fills up the views with the movie-information
         /* view.findViewById<TextView>(R.id.movieTitleTextView).text = movie.title
@@ -41,8 +43,8 @@ class BirdUnlockFragment : Fragment() {
 
 
         // Fills up the views with the movie-information, accessing the views through the binding-object
-        binding.moviePosterImageView.setImageResource(movie.image)
-        movie.image?.let { binding.moviePosterImageView.setImageResource(it) }
+//        binding.moviePosterImageView.setImageResource(movie.image)
+//        movie.image?.let { binding.moviePosterImageView.setImageResource(it) }
 //        binding.movieDescriptionTextView.text = movie.description
     }
 }
