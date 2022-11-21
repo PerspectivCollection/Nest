@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:padding="0dp">
 
         <ImageView
             android:id="@+id/imageunlock"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="someimage" />
+            android:contentDescription="@string/birds_in_grid_layout" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
