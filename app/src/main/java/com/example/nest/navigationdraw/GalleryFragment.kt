@@ -29,14 +29,6 @@ class GalleryFragment : Fragment() {
 
         recycler?.layoutManager = LinearLayoutManager(activity)
 
-//         This will pass the ArrayList to our Adapter
-
-//        val data = ArrayList<Bird>()
-//
-//        for (i in 1..20) {
-//            data.add(Bird.getBird()[i].image)
-//        }
-
         val adapter = GalleryAdapter(birdCollection)
 //todo change layout to 3 or somthing
         recycler.layoutManager = GridLayoutManager(context, 2)

@@ -29,10 +29,10 @@ class GalleryAdapter(private val item: List<Bird>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentBird = item[position]
         holder.imageView.setImageResource(currentBird.image)
-        if (currentBird.name === "Northern Pintall"){ //todo make a new data true/fals unlocked
+        if (currentBird.name === "Northern Pintall") { //todo make a new data true/fals unlocked
             holder.imageView.setBackgroundColor(Color.GREEN)
         } else {
-            holder.imageView.setBackgroundColor(Color.RED)
+            holder.imageView.setBackgroundColor(Color.GRAY)
         }
     }
 
