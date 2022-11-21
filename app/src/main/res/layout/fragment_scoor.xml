@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     >
     <data>
@@ -13,42 +13,50 @@
             type="com.example.nest.navigationdraw.GuesswhoViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/factId"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screensall.guesswho.ScoorFragment">
+        android:orientation="vertical"
+        android:background="@mipmap/back_ground_image"
+        tools:ignore="MissingDefaultResource">
 
-        <!-- TODO: scoor -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="150dp"
+            android:src="@mipmap/win_image"
+            android:contentDescription="@string/win_image" />
+
 
         <TextView
-            android:id="@+id/birdtextId"
-            android:layout_width="235dp"
-            android:layout_height="48dp"
-            android:background="#00FF9800"
-            android:text="@string/show_bird"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="numbTry_of_numCorrect" />
-
-        <Button
-            android:id="@+id/btnNextId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/display_result"
+            android:layout_margin="25dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/imageView"
+            android:id="@+id/displayResult"
+            android:textStyle="bold"
+            android:textColor="@color/md_theme_dark_inverseSurface"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"/>
 
-            android:text="@string/to_menu"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/birdtextId"
-            app:layout_constraintVertical_bias="0.434" />
+        <Button
+            android:id="@+id/playAgain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/playAgain" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
 </layout>

@@ -44,12 +44,8 @@ class QustionQuizGame : Fragment(), View.OnClickListener {
         binding.option2.setOnClickListener(this)
         binding.option3.setOnClickListener(this)
         binding.option4.setOnClickListener(this)
-        binding.option1.setOnClickListener(this)
+        binding.btnSubmit.setOnClickListener(this)
 
-
-        binding.btnSubmit.setOnClickListener {
-            findNavController().navigate(R.id.resultFragment)
-        }
 
         setQuestion()
         return binding.root

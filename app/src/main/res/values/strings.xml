@@ -47,5 +47,9 @@
     <string name="play_quiz">play quiz</string>
     <string name="play">somer</string>
     <string name="duck_and_goose_logo">duck and goose Logo</string>
+    <string name="playAgain">Play Again</string>
+    <string name="display_result">Display Result</string>
+    <string name="win_image">Win Image</string>
+    <string name="name_quiz_picture">Name_quiz picture</string>
 
 </resources>
