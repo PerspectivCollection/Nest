@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:visibility="visible">
 
     <data>
+
         <variable
             name="factfragment"
             type="com.example.nest.screensall.guesswho.FactFragment" />
@@ -25,9 +27,10 @@
             android:id="@+id/birdtextId"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-
+            android:background="@color/md_theme_light_error"
             android:textAlignment="center"
-            android:textSize="34sp"
+            android:textColor="@color/md_theme_light_onPrimary"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -65,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="80dp"
-            android:text="Next"
+            android:text="@string/next_to_fact"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.759"
@@ -101,25 +104,29 @@
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.251"
+            app:layout_constraintVertical_bias="0.333"
             tools:ignore="MissingConstraints">
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
-                android:layout_marginBottom="84dp"
-                android:text="description"
+                android:text="@string/description"
+                android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.68" />
 
             <ImageView
                 android:id="@+id/imageCardView3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
+                android:contentDescription="@string/image_showing_the_bird_you_guessed"
                 android:visibility="visible"
                 app:layout_constraintBottom_toTopOf="@+id/textView2"
                 app:layout_constraintEnd_toEndOf="parent"
