@@ -38,7 +38,7 @@ class GalleryFragment : Fragment() {
 //        }
 
         val adapter = GalleryAdapter(birdCollection)
-
+//todo change layout to 3 or somthing
         recycler.layoutManager = GridLayoutManager(context, 2)
 
         recycler.adapter = adapter

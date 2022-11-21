@@ -1,6 +1,7 @@
 package com.example.nest.adapter
 
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,11 @@ class GalleryAdapter(private val item: List<Bird>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentBird = item[position]
         holder.imageView.setImageResource(currentBird.image)
+        if (currentBird.name === "Northern Pintall"){ //todo make a new data true/fals unlocked
+            holder.imageView.setBackgroundColor(Color.GREEN)
+        } else {
+            holder.imageView.setBackgroundColor(Color.RED)
+        }
     }
 
     override fun getItemCount(): Int {
