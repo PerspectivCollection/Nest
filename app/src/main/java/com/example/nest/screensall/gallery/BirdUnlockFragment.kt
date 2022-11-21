@@ -32,19 +32,5 @@ class BirdUnlockFragment : Fragment() {
         val binding = FragmentBirdUnlockBinding.bind(view)
         fragmentBinding = binding
 
-
-        // Gets the movie with the uid (just a number in the list in this case)
-//        val movie = GalleryStorage.getGalery()[args.id]
-
-        // Fills up the views with the movie-information
-        /* view.findViewById<TextView>(R.id.movieTitleTextView).text = movie.title
-        view.findViewById<ImageView>(R.id.moviePosterImageView).setImageResource(movie.posterUrl)
-        view.findViewById<TextView>(R.id.movieDescriptionTextView).text = movie.description*/
-
-
-        // Fills up the views with the movie-information, accessing the views through the binding-object
-//        binding.moviePosterImageView.setImageResource(movie.image)
-//        movie.image?.let { binding.moviePosterImageView.setImageResource(it) }
-//        binding.movieDescriptionTextView.text = movie.description
     }
 }
