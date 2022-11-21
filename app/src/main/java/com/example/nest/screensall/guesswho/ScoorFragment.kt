@@ -26,8 +26,11 @@ class ScoorFragment : Fragment() {
         binding.viewModel = sharedViewModel //dot now what dey dom now
         binding.lifecycleOwner = this //dot now what dey dom now
 
-        binding.btnNextId.setOnClickListener() {
+        //todo scoor
 
+//        binding.birdtextId.text = sharedViewModel.
+
+        binding.btnNextId.setOnClickListener() {
             sharedViewModel.resetProgress()
             findNavController().navigate(R.id.action_scoorFragment_to_nav_guesswho)
 

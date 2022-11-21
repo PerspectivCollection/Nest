@@ -49,5 +49,9 @@
     <string name="play">somer</string>
     <string name="duck_and_goose_logo">duck and goose Logo</string>
     <string name="next">Next</string>
+    <string name="birds_in_grid_layout">Birds in grid layout</string>
+    <string name="description">description</string>
+    <string name="next_to_fact">Next</string>
+    <string name="image_showing_the_bird_you_guessed">Image showing the bird you guessed</string>
 
 </resources>

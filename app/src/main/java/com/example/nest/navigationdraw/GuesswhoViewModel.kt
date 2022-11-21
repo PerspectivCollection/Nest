@@ -21,7 +21,6 @@ class GuesswhoViewModel : ViewModel() {
 
 
     init {
-//        _typebird.value = false
     }
 
     fun setGuessBird(index: Int) {
