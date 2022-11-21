@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
-
-
     <!-- TODO: Gallery -->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/frameLayout"

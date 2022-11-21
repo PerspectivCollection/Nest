@@ -7,17 +7,17 @@
         <!--        guess who-->
         <item
             android:id="@+id/nav_guesswho"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@android:drawable/ic_menu_help"
             android:title="@string/menu_guess_who" />
 
         <!--        todo: change to namequiz  refactor-->
         <item
             android:id="@+id/nav_namequiz"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@android:drawable/ic_menu_edit"
             android:title="@string/menu_name_quiz" />
         <item
             android:id="@+id/nav_audioquiz"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@android:drawable/ic_lock_silent_mode_off"
             android:title="@string/audio_quiz" />
         <item
             android:id="@+id/nav_gallery"

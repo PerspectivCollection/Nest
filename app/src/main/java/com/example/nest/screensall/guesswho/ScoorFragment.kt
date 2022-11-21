@@ -20,7 +20,7 @@ class ScoorFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentScoorBinding.inflate(inflater, container, false)
         binding.viewModel = sharedViewModel //dot now what dey dom now
@@ -33,9 +33,7 @@ class ScoorFragment : Fragment() {
         binding.btnNextId.setOnClickListener() {
             sharedViewModel.resetProgress()
             findNavController().navigate(R.id.action_scoorFragment_to_nav_guesswho)
-
         }
-
 
         return binding.root
 

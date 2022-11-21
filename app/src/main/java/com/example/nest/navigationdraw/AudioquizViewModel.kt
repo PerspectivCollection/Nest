@@ -21,7 +21,6 @@ class AudioquizViewModel : ViewModel() {
     val storeList = mutableListOf<Int>()
 
     init {
-//        _typebird.value = false
     }
 
     fun setGuessBird(index: Int) {
@@ -32,9 +31,6 @@ class AudioquizViewModel : ViewModel() {
         _progressguess.value = index
     }
 
-    fun progreebar(addprogres: Int) {
-        _progressguess.value = addprogres.plus(0)
-    }
 
     fun resetProgress(){
         storeList.removeAll(storeList)
