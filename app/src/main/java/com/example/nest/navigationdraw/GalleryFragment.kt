@@ -25,12 +25,14 @@ class GalleryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         val recycler = view.findViewById<RecyclerView>(R.id.birdRecyclerView)
 
         recycler?.layoutManager = LinearLayoutManager(activity)
 
         val adapter = GalleryAdapter(birdCollection)
-//todo change layout to 3 or somthing
+
         recycler.layoutManager = GridLayoutManager(context, 2)
 
         recycler.adapter = adapter
