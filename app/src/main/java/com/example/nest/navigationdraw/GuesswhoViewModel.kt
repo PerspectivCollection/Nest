@@ -19,8 +19,15 @@ class GuesswhoViewModel : ViewModel() {
 
     val storeList = mutableListOf<Int>()
 
+    private val _storCorrect = MutableLiveData<Int>()
+
+    val storCorrect : LiveData<Int>
+    get() = _storCorrect
+
+
 
     init {
+//        _storCorrect.value = 0
     }
 
     fun setGuessBird(index: Int) {
@@ -29,7 +36,7 @@ class GuesswhoViewModel : ViewModel() {
 
     //adds elment to end of list
     fun updateIndexGuess() {
-        var store = (0..50).random() //there is 1 , rmember to have -1 less then the list length
+        val store = (0..20).random() //there is 1 , rmember to have -1 less then the list length
         _birdindex.value = store
         storeList.add(store)
     }
@@ -49,6 +56,10 @@ class GuesswhoViewModel : ViewModel() {
 
     fun rigthGuess(){
         _typebird.value = true
+    }
+
+    fun addToScoor(index: Int){
+        _storCorrect.value = index.plus(1) //todo fix
     }
 
     fun resetGuess(){
