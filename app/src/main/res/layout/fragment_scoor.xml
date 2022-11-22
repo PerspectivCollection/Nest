@@ -33,7 +33,7 @@
             android:layout_width="235dp"
             android:layout_height="48dp"
             android:background="#00FF9800"
-            android:text="@string/show_bird"
+            android:text="@{viewModel.storCorrect.toString()}"
             android:textAlignment="center"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
