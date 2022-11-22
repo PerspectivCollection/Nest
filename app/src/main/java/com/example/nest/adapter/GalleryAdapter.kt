@@ -19,9 +19,7 @@ class GalleryAdapter(private val item: List<Bird>) :
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val imageView: ImageView = itemView.findViewById(R.id.imageunlock)
-
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
