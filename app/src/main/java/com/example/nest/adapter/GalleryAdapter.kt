@@ -33,9 +33,6 @@ class GalleryAdapter(private val item: List<Bird>) :
         if (currentBird.unlocked == true) {
             holder.imageView.setBackgroundColor(Color.GREEN)
 
-//            Toast(context, "${Bird.getBird()[4].unlocked.get()}", LENGTH_LONG).show()
-//            Toast.makeText(context, "${Bird.getBird().get(0).name}", Toast.LENGTH_SHORT).show()
-
 
         } else {
             holder.imageView.setBackgroundColor(Color.GRAY)
