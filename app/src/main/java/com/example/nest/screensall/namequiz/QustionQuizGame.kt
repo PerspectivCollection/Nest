@@ -12,7 +12,6 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.nest.R
 import com.example.nest.databinding.FragmentQustionQuizGameBinding
 import com.example.nest.model.Constanst
@@ -47,9 +46,9 @@ class QustionQuizGame : Fragment(), View.OnClickListener {
         binding.option1.setOnClickListener(this)
 
 
-        binding.btnSubmit.setOnClickListener {
-            findNavController().navigate(R.id.resultFragment)
-        }
+//        binding.btnSubmit.setOnClickListener {
+//            findNavController().navigate(R.id.resultFragment)
+//        }
 
         setQuestion()
         return binding.root
