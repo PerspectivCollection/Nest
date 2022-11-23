@@ -29,11 +29,12 @@
 
     <fragment
         android:id="@+id/nav_namequiz"
-        android:name="com.example.nest.screensall.namequiz.NameQuizFragment"
+        android:name="com.example.nest.navigationdraw.NameQuizFragment"
         android:label="@string/fragment_name_quizz">
         <action
             android:id="@+id/action_nav_namequiz_to_qustionQuizGame"
             app:destination="@id/qustionQuizGame" />
+
     </fragment>
     <fragment
         android:id="@+id/qustionQuizGame"
@@ -142,5 +143,14 @@
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.example.nest.screensall.namequiz.ResultFragment"
-        android:label="Result Fragment" />
+        android:label="Result Fragment"
+        >
+        <argument
+            android:name="corecttargs"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_resultFragment_to_nav_namequiz"
+            app:destination="@id/nav_namequiz" />
+    </fragment>
 </navigation>

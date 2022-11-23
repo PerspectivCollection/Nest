@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.nest.R
 import com.example.nest.databinding.FragmentQustionQuizGameBinding
 import com.example.nest.model.Constanst
@@ -39,18 +40,51 @@ class QustionQuizGame : Fragment(), View.OnClickListener {
 
         Log.i("info", mCurrrentPosition.toString())
 
-        binding.option1.setOnClickListener(this)
-        binding.option2.setOnClickListener(this)
-        binding.option3.setOnClickListener(this)
-        binding.option4.setOnClickListener(this)
-        binding.option1.setOnClickListener(this)
+        val question: Question = mQuestionsList[mCurrrentPosition - 1]
 
-
-//        binding.btnSubmit.setOnClickListener {
-//            findNavController().navigate(R.id.resultFragment)
-//        }
 
         setQuestion()
+
+        binding.option1.setOnClickListener() {
+            mSelectedPosition = 1
+            correc()
+        }
+        binding.option1.setOnClickListener(this)
+
+
+        binding.option2.setOnClickListener() {
+            mSelectedPosition = 2
+            correc()
+        }
+
+        binding.option2.setOnClickListener(this)
+
+
+        binding.option3.setOnClickListener() {
+            mSelectedPosition = 3
+            correc()
+        }
+        binding.option3.setOnClickListener(this)
+
+
+        binding.option4.setOnClickListener() {
+            mSelectedPosition = 4
+            correc()
+        }
+        binding.option4.setOnClickListener(this)
+
+
+
+        binding.btnSubmit.setOnClickListener {
+            if (binding.btnSubmit.text == "Next Question") {
+                mCurrrentPosition++
+                setQuestion()
+            }
+
+            mCurrrentPosition++
+            setQuestion()
+        }
+
         return binding.root
     }
 
@@ -66,18 +100,46 @@ class QustionQuizGame : Fragment(), View.OnClickListener {
         binding.option3.text = question.optionThree
         binding.option4.text = question.optionFoure
 
+        binding.option1.background = context?.let() { ContextCompat.getDrawable(it, R.color.md_theme_light_onSecondary) }
+        binding.option2.background = context?.let() { ContextCompat.getDrawable(it, R.color.md_theme_light_onSecondary) }
+        binding.option3.background = context?.let() { ContextCompat.getDrawable(it, R.color.md_theme_light_onSecondary) }
+        binding.option4.background = context?.let() { ContextCompat.getDrawable(it, R.color.md_theme_light_onSecondary) }
+
         binding.pb.progress = mCurrrentPosition
         binding.progressBar.text = "$mCurrrentPosition" + "/" + binding.pb.max
 
         defaultNewQuation()
-        if (mCurrrentPosition == mQuestionsList.size) {
 
+        if (mCurrrentPosition == mQuestionsList.size) {
             binding.btnSubmit.text = "Quiz Finished"
 
+            binding.btnSubmit.setOnClickListener {
+                val action = QustionQuizGameDirections.actionQustionQuizGameToResultFragment()
+                action.corecttargs = mCorrectAnswer
+                findNavController().navigate(action)
+            }
         } else {
-
             binding.btnSubmit.text = "Submit"
         }
+    }
+
+    fun correc() {
+        val question = mQuestionsList[mCurrrentPosition - 1]
+
+        if (question!!.corretAns != mSelectedPosition) {
+//            answerView(mCurrrentPosition, R.color.md_theme_dark_tertiary)
+        } else {
+            mCorrectAnswer++
+//            answerView(question.corretAns, R.color.md_theme_dark_tertiary)
+
+            if (mCurrrentPosition == mQuestionsList.size) {
+                binding.btnSubmit.text = "Finished"
+            } else {
+                binding.btnSubmit.text = "Next Question"
+            }
+        }
+
+        mSelectedPosition = 0
     }
 
     private fun defaultNewQuation() {
@@ -95,15 +157,12 @@ class QustionQuizGame : Fragment(), View.OnClickListener {
             option.setTextColor(Color.parseColor("#7A8089"))
             option.typeface = Typeface.DEFAULT
         }
-
-
     }
 
     override fun onClick(V: View?) {
         when (V?.id) {
             R.id.option1 -> {
                 selectedOptionView(binding.option1, 1)
-
             }
             R.id.option2 -> {
                 selectedOptionView(binding.option2, 2)
@@ -158,11 +217,9 @@ class QustionQuizGame : Fragment(), View.OnClickListener {
     }
 
     private fun selectedOptionView(option: TextView, selectedPosition: Int) {
-
         defaultNewQuation()
 
         mSelectedPosition = selectedPosition
-
 
 
         option.setTextColor(Color.parseColor("#363A43"))
@@ -197,8 +254,6 @@ class QustionQuizGame : Fragment(), View.OnClickListener {
                     ContextCompat.getDrawable(it, color)
                 }
             }
-
-
         }
 
     }

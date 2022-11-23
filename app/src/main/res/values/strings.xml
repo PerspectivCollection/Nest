@@ -54,5 +54,6 @@
     <string name="next_to_fact">Next</string>
     <string name="image_showing_the_bird_you_guessed">Image showing the bird you guessed</string>
     <string name="description_name_to_guess">image of a bird you have to guess</string>
+    <string name="start">Start</string>
 
 </resources>
