@@ -6,11 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
-import com.example.nest.R
 import com.example.nest.databinding.FragmentAudioquizBinding
-import com.example.nest.databinding.FragmentGuesswhoBinding
 
 class AudioquizFragment : Fragment() {
 
@@ -23,7 +20,7 @@ class AudioquizFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding= FragmentAudioquizBinding.inflate(inflater, container, false)
+        _binding = FragmentAudioquizBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
