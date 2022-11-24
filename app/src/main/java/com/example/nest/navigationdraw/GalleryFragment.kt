@@ -22,16 +22,15 @@ class GalleryFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_gallery, container, false)
     }
-
+//https://www.geeksforgeeks.org/android-recyclerview-in-kotlin/
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         val recycler = view.findViewById<RecyclerView>(R.id.birdRecyclerView)
 
         recycler?.layoutManager = LinearLayoutManager(activity)
 
-        val adapter = GalleryAdapter(birdCollection)
+        val adapter = GalleryAdapter(birdCollection.subList(1,100))//update value the more images are added - 1
 
         recycler.layoutManager = GridLayoutManager(context, 2)
 
