@@ -2,6 +2,7 @@ package com.example.nest.adapter
 
 
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nest.R
 import com.example.nest.model.Bird
 
-
+//https://www.geeksforgeeks.org/android-recyclerview-in-kotlin/
 class GalleryAdapter(private val item: List<Bird>) :
     RecyclerView.Adapter<GalleryAdapter.ViewHolder>() {
 
@@ -29,10 +30,16 @@ class GalleryAdapter(private val item: List<Bird>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentBird = item[position]
+
         holder.imageView.setImageResource(currentBird.image)
+
+        holder.imageView.setOnClickListener {
+            Navigation.createNavigateOnClickListener(R.id.action_movieListFragment_to_movieDetailFragment)
+            Log.i("", "${currentBird}")
+        }
+
         if (currentBird.unlocked == true) {
             holder.imageView.setBackgroundColor(Color.GREEN)
-
 
         } else {
             holder.imageView.setBackgroundColor(Color.GRAY)
