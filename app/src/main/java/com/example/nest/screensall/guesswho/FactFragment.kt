@@ -1,19 +1,18 @@
 package com.example.nest.screensall.guesswho
 
 //app
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.nest.R
-import com.example.nest.model.Bird
 import com.example.nest.databinding.FragmentFactBinding
+import com.example.nest.model.Bird
 import com.example.nest.navigationdraw.GuesswhoViewModel
 
 
@@ -33,7 +32,6 @@ class FactFragment : Fragment() {
         binding.viewModel = sharedViewModel
         binding.lifecycleOwner = this
 
-
         //no navigate to audio or guess
         binding.btnNextId2.visibility = View.GONE
 
@@ -45,16 +43,29 @@ class FactFragment : Fragment() {
             }
         }
 
-        //new bird evry entering fragment
-        if (sharedViewModel.birdindex.value != 0){
-            binding.birdtextId.text = Bird.getBird()[sharedViewModel.storeList.last().toInt()].name.toString()
+        //new bird every entering fragment
+        if (sharedViewModel.birdindex.value != 0) {
+            if (sharedViewModel.storeList.isEmpty()){
+                sharedViewModel.storeList.add(2)
+            }
+            binding.birdtextId.text =
+                Bird.getBird()[sharedViewModel.storeList.last().toInt()].name.toString()
         }
+
+        if (sharedViewModel.storCorrect.value == null)
+            sharedViewModel.scoorStart(0)
+
+        val addsaveScoor = sharedViewModel.storCorrect.value?.toInt()!!
 
         //correct or wrong green or red
         if ((sharedViewModel.typebird.value == true) or args.typeBird) {
-            binding.birdtextId.setBackgroundColor(Color.GREEN)
+            sharedViewModel.addToScoor(addsaveScoor) //add to scoor
+
+            context?.let { ContextCompat.getColor(it, R.color.md_theme_light_tertiary) }
+                ?.let { binding.birdtextId.setBackgroundColor(it) }
         } else {
-            binding.birdtextId.setBackgroundColor(Color.RED)
+            context?.let { ContextCompat.getColor(it, R.color.md_theme_dark_errorContainer) }
+                ?.let { binding.birdtextId.setBackgroundColor(it) }
         }
 
         //to guesswho
@@ -94,19 +105,17 @@ class FactFragment : Fragment() {
 
         sharedViewModel.setGuessBird(args.audioIndexBird.toInt())
 
-
         //to audio btn
         if (args.navigateReapeat) {
             binding.birdtextId.text = Bird.getBird()[args.audioIndexBird.toInt()].name.toString()
             binding.btnNextId2.visibility = View.VISIBLE
         }
 
-        binding?.apply {
+        binding.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
             factfragment = this@FactFragment
         }
-
     }
 
     fun navigateNext() {
