@@ -6,11 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.nest.R
 import com.example.nest.databinding.FragmentBirdUnlockBinding
-import com.example.nest.model.Bird
-import com.example.nest.model.GalleryStorage
 
 
 class BirdUnlockFragment : Fragment() {
@@ -31,6 +28,5 @@ class BirdUnlockFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentBirdUnlockBinding.bind(view)
         fragmentBinding = binding
-
     }
 }
