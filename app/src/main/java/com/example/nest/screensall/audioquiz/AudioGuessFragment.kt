@@ -5,16 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.nest.R
 import com.example.nest.databinding.FragmentAudioGuessBinding
 import com.example.nest.model.Bird
 import com.example.nest.navigationdraw.AudioquizViewModel
-import com.example.nest.screensall.audioquiz.AudioGuessFragmentDirections
 import com.example.nest.screensall.guesswho.FactFragmentArgs
 
 class AudioGuessFragment : Fragment() {
@@ -31,21 +28,21 @@ class AudioGuessFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-
-        if(sharedViewModel.storeList.size >= 6){
+        if (sharedViewModel.storeList.size >= 6) {
             sharedViewModel.resetProgress()
         }
 
-        _binding = FragmentAudioGuessBinding.inflate(inflater, container, false)
-        binding.viewModel = sharedViewModel //dot now what dey dom now
-        binding.lifecycleOwner = this //dot now what dey dom now
+        sharedViewModel.storeAudiGuess((1..33).random())
 
-        sharedViewModel.storeAudiGuess((1..34).random())
+        _binding = FragmentAudioGuessBinding.inflate(inflater, container, false)
+        binding.viewModel = sharedViewModel
+        binding.lifecycleOwner = this
+
         sharedViewModel.resetGuess()
 
-        birdMediaPlayer = sharedViewModel.storeList.last().toInt()?.let {
+        birdMediaPlayer = sharedViewModel.storeList.last().toInt().let {
             Bird.getBird().get(it).audio?.let {
                 MediaPlayer.create(
                     context,
@@ -69,7 +66,6 @@ class AudioGuessFragment : Fragment() {
             if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird()[it1].typeBird.toString() } == "Duck") {
                 sharedViewModel.rigthGuess()
             }
-
             navigateNext()
         }
 
@@ -80,7 +76,6 @@ class AudioGuessFragment : Fragment() {
             if (sharedViewModel.birdindex.value?.let { it1 -> Bird.getBird()[it1].typeBird.toString() } == "Goose") {
                 sharedViewModel.rigthGuess()
             }
-
             navigateNext()
         }
         return binding.root
@@ -96,7 +91,6 @@ class AudioGuessFragment : Fragment() {
         }
 
         sharedViewModel.setGuessBird(args.audioIndexBird.toInt())
-
     }
 
     //navigate to fact with a argument index, true/false, true
