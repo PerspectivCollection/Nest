@@ -27,9 +27,6 @@ class GuesswhoFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-//        Toast.makeText(context, "${viewModel.random.toString()} 0  ferdig", Toast.LENGTH_SHORT).show()
-        Toast.makeText(context, "${Bird.getBird().get(0).name}", Toast.LENGTH_SHORT).show()
-
         //button Duck
         binding.btnStartId.setOnClickListener() {
             navigateNext()
