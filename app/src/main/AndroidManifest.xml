@@ -4,8 +4,6 @@
     package="com.example.nest"
     >
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
-
     <application
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"

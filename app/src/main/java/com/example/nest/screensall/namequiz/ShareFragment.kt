@@ -11,17 +11,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.nest.R
 
 
-class ShareFragment : AppCompatActivity() {
+class ShareFragment : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
         setContentView(R.layout.fragment_namequiz)
 
         val btn = findViewById<Button>(R.id.share_btn)
         btn.setOnClickListener(View.OnClickListener {
-            val intent = Intent(Intent(ACTION_VIEW, Uri.parse("https://www.facebook.com")))
+            val intent = Intent(Intent(ACTION_VIEW, Uri.parse("https://www.facebook.com")),)
             startActivity(intent)
 
         })
 
-    }
+ }
 }
