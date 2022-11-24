@@ -1,6 +1,7 @@
 package com.example.nest.screensall.guesswho
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,7 @@ class ScoorFragment : Fragment() {
         binding.lifecycleOwner = this //dot now what dey dom now
 
         binding.btnNextId.setOnClickListener() {
+            sharedViewModel.scoorReset()
             sharedViewModel.resetProgress()
             findNavController().navigate(R.id.action_scoorFragment_to_nav_guesswho)
         }
@@ -41,6 +43,11 @@ class ScoorFragment : Fragment() {
             viewModel = sharedViewModel
             scoorFragment = this@ScoorFragment
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

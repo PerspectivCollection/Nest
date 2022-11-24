@@ -45,52 +45,62 @@ class QustionQuizGame : Fragment(), View.OnClickListener {
 
         setQuestion()
 
+
         binding.option1.setOnClickListener() {
             mSelectedPosition = 1
-            correc()
-        }
-        binding.option1.setOnClickListener(this)
+            if (correc()) {
+                binding.option1.setTextColor(Color.RED)
+            } else {
+                binding.option1.setOnClickListener(this)
+                correc()
+            }
 
+            Log.i("", correc().toString())
+        }
 
         binding.option2.setOnClickListener() {
             mSelectedPosition = 2
-            correc()
+            if (correc()) {
+                binding.option2.setTextColor(Color.RED)
+            } else {
+                binding.option2.setOnClickListener(this)
+                correc()
+            }
+            Log.i("", correc().toString())
+
         }
-
-        binding.option2.setOnClickListener(this)
-
 
         binding.option3.setOnClickListener() {
             mSelectedPosition = 3
-            correc()
+            if (correc()) {
+                binding.option3.setTextColor(Color.RED)
+            } else {
+                binding.option3.setOnClickListener(this)
+                correc()
+            }
         }
-        binding.option3.setOnClickListener(this)
 
-
-        binding.option4.setOnClickListener() {
+        binding.option4.setOnClickListener()
+        {
             mSelectedPosition = 4
-            correc()
+            if (correc()) {
+                binding.option4.setTextColor(Color.RED)
+            } else {
+                binding.option4.setOnClickListener(this)
+                correc()
+            }
         }
-        binding.option4.setOnClickListener(this)
 
-
-
-        binding.btnSubmit.setOnClickListener {
-            if (binding.btnSubmit.text == "Next Question") {
+        binding.btnSubmit.setOnClickListener()
+        {
                 mCurrrentPosition++
                 setQuestion()
-            }
-
-            mCurrrentPosition++
-            setQuestion()
         }
 
         return binding.root
     }
 
     private fun setQuestion() {
-
-
         val question: Question = mQuestionsList[mCurrrentPosition - 1]
 
         binding.QuestionId.text = question.question
@@ -100,10 +110,14 @@ class QustionQuizGame : Fragment(), View.OnClickListener {
         binding.option3.text = question.optionThree
         binding.option4.text = question.optionFoure
 
-        binding.option1.background = context?.let() { ContextCompat.getDrawable(it, R.color.md_theme_light_onSecondary) }
-        binding.option2.background = context?.let() { ContextCompat.getDrawable(it, R.color.md_theme_light_onSecondary) }
-        binding.option3.background = context?.let() { ContextCompat.getDrawable(it, R.color.md_theme_light_onSecondary) }
-        binding.option4.background = context?.let() { ContextCompat.getDrawable(it, R.color.md_theme_light_onSecondary) }
+        binding.option1.background =
+            context?.let() { ContextCompat.getDrawable(it, R.color.md_theme_light_onSecondary) }
+        binding.option2.background =
+            context?.let() { ContextCompat.getDrawable(it, R.color.md_theme_light_onSecondary) }
+        binding.option3.background =
+            context?.let() { ContextCompat.getDrawable(it, R.color.md_theme_light_onSecondary) }
+        binding.option4.background =
+            context?.let() { ContextCompat.getDrawable(it, R.color.md_theme_light_onSecondary) }
 
         binding.pb.progress = mCurrrentPosition
         binding.progressBar.text = "$mCurrrentPosition" + "/" + binding.pb.max
@@ -123,23 +137,27 @@ class QustionQuizGame : Fragment(), View.OnClickListener {
         }
     }
 
-    fun correc() {
+    fun correc(): Boolean {
         val question = mQuestionsList[mCurrrentPosition - 1]
 
         if (question!!.corretAns != mSelectedPosition) {
 //            answerView(mCurrrentPosition, R.color.md_theme_dark_tertiary)
         } else {
-            mCorrectAnswer++
+//            mCorrectAnswer++
 //            answerView(question.corretAns, R.color.md_theme_dark_tertiary)
 
             if (mCurrrentPosition == mQuestionsList.size) {
                 binding.btnSubmit.text = "Finished"
             } else {
                 binding.btnSubmit.text = "Next Question"
+                mCorrectAnswer++
+                return false
             }
         }
 
         mSelectedPosition = 0
+
+        return true
     }
 
     private fun defaultNewQuation() {

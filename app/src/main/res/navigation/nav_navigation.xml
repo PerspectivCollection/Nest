@@ -39,7 +39,7 @@
     <fragment
         android:id="@+id/qustionQuizGame"
         android:name="com.example.nest.screensall.namequiz.QustionQuizGame"
-        android:label="QustionQuizGame">
+        android:label="@string/fragment_name_quizz">
         <action
             android:id="@+id/action_qustionQuizGame_to_resultFragment"
             app:destination="@id/resultFragment" />
@@ -95,6 +95,10 @@
             android:name="navigateReapeat"
             app:argType="boolean"
             android:defaultValue="false" />
+        <argument
+            android:name="addScoorArg"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/scoorFragment"
@@ -143,7 +147,7 @@
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.example.nest.screensall.namequiz.ResultFragment"
-        android:label="Result Fragment"
+        android:label="@string/fragment_name_quizz"
         >
         <argument
             android:name="corecttargs"
