@@ -20,6 +20,11 @@ class AudioquizViewModel : ViewModel() {
 
     val storeList = mutableListOf<Int>()
 
+    private val _storCorrect = MutableLiveData<Int>()
+    val storCorrect: LiveData<Int>
+        get() = _storCorrect
+
+
     init {
     }
 
@@ -30,7 +35,6 @@ class AudioquizViewModel : ViewModel() {
     fun progreebarstart(index: Int) {
         _progressguess.value = index
     }
-
 
     fun resetProgress(){
         storeList.removeAll(storeList)
@@ -48,5 +52,4 @@ class AudioquizViewModel : ViewModel() {
     fun storeAudiGuess(num : Int){
         storeList.add(num)
     }
-
 }
