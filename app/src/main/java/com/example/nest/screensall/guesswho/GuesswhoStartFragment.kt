@@ -30,9 +30,7 @@ class GuesswhoStartFragment : Fragment() {
 
         sharedViewModel.birdindex.value?.toInt()?.let { it ->
             Bird.getBird()[it].image.let {
-                if (it != null) {
-                    binding.imagegoosId.setImageResource(it)
-                }
+                binding.imagegoosId.setImageResource(it)
             }
         }
 
@@ -65,7 +63,6 @@ class GuesswhoStartFragment : Fragment() {
         }
     }
 
-    //repite sycle
     fun navigateNext() {
         findNavController().navigate(R.id.action_guessWhoStartFragment_to_fact_Fragment)
     }
